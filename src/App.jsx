@@ -5,11 +5,10 @@ import { Footer } from "./components/Footer";
 
 const App = () => {
   return (
-    <>
+    <div className="flex flex-col">
       <Navbar />
       <Home />
-      <Footer />
-    </>
+    </div>
   );
 };
 
