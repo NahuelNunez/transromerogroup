@@ -19,21 +19,30 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <div className="bg-[#000]/60 w-full fixed top-0  mr-auto ml-auto  z-[9999] p-4 pl-[20px] pr-[20px]">
+    <div className="bg-[#000]/60 w-full fixed top-0  mr-auto ml-auto  z-[9999] p-8 pl-[20px] pr-[20px]">
       <div className="flex justify-around items-center text-white  ">
         <div>
-          <h2 className="text-2xl font-bold text-blue-600">
-            <a href="#home">LOGO</a>
+          <h2 className="text-2xl font-bold text-blue-600 font-Orbitron">
+            <a href="#home">TransRomero Group</a>
           </h2>
         </div>
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className={`md:hidden flex flex-col items-center gap-1.5 p-2`}
           onClick={toggleMenu}
           aria-label="Abrir menu"
         >
           <span
-            className={`w-6 h-0.5 bg-white transition-all ${
-              isMenuOpen ? "rotate-45 traslate-y-2" : ""
+            className={`w-6 h-0.5 bg-white transition-all duration-[0.5s] ${
+              isMenuOpen
+                ? "rotate-230 translate-y-2 duration-[0.5s] "
+                : "bg-white"
+            }`}
+          ></span>
+          <span
+            className={`w-6 h-0.5 bg-white transition-all duration-[0.5s] ${
+              isMenuOpen
+                ? "-rotate-230 translate-y-0 duration-[0.5s] "
+                : "bg-white"
             }`}
           ></span>
           <span
@@ -41,38 +50,17 @@ export const Navbar = () => {
               isMenuOpen ? "opacity-0" : "opacity-100"
             }`}
           ></span>
-          <span
-            className={`w-6 h-0.5 bg-white transition-all ${
-              isMenuOpen ? "rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
         </button>
 
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, y: 95 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute md:hidden bg-[#000]/90 h-screen  -top-0 -right-0 rounded-lg  p-12"
+            exit={{ opacity: 0, y: 95 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute md:hidden bg-[#000]/90 h-screen w-full  -top-0 -right-0 rounded-lg  p-2"
           >
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-0 left-1   bg-red-500 rounded-md m-2 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
-                />
-              </svg>
-            </button>
-            <ul className="flex flex-col justify-around items-center  h-full gap-1.5 ">
+            <ul className="flex flex-col justify-start items-center  h-full gap-25 font-Orbitron ">
               <li
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
@@ -141,10 +129,16 @@ export const Navbar = () => {
                     className="absolute mt-2 w-40 bg-[#000]/90 p-2 rounded-lg shadow-lg"
                   >
                     <ul className="py-2 flex flex-col justify-between gap-4">
-                      <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
+                      <li
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                      >
                         <a href="#expresocuyano">ExpresoCuyano</a>
                       </li>
-                      <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
+                      <li
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                      >
                         <a href="#megapack">MegaPack</a>
                       </li>
                     </ul>
@@ -155,7 +149,7 @@ export const Navbar = () => {
           </motion.div>
         )}
 
-        <div className=" hidden md:flex justify-between gap-5 list-none items-center">
+        <div className=" hidden md:flex justify-between gap-7 list-none items-center font-Orbitron">
           <a
             className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
             href="#home"
