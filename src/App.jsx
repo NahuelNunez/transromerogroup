@@ -1,14 +1,16 @@
 import React from "react";
-import { Navbar } from "./components/Navbar";
-import { Home } from "./components/Home";
-import { Footer } from "./components/Footer";
+import { Navbar } from "./components/pages/Navbar";
+import { Home } from "./components/pages/Home";
+import { Footer } from "./components/pages/Footer";
+import { ExpresoCuyano } from "./components/ExpresoCuyano/ExpresoCuyano";
 
 const App = () => {
   return (
-    <div className="flex flex-col">
+    <>
       <Navbar />
       <Home />
-    </div>
+      <ExpresoCuyano />
+    </>
   );
 };
 

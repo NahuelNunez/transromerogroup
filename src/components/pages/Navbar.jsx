@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { UseStateHook } from "./hooks/UseStateHook";
+import { UseStateHook } from "../hooks/UseStateHook";
 
 export const Navbar = () => {
   const dropdownRef = useRef(null);
@@ -19,15 +19,15 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <div className="bg-[#000]/60 w-full fixed top-0  mr-auto ml-auto  z-[9999] p-8 pl-[20px] pr-[20px]">
-      <div className="flex justify-around items-center text-white  ">
+    <div className="bg-[#000] w-full fixed top-0  mr-auto ml-auto  z-[9999] p-6 pl-[20px] pr-[20px]">
+      <div className="flex justify-between lg:justify-around w-full items-center text-white  ">
         <div>
-          <h2 className="text-2xl font-bold text-blue-600 font-Orbitron">
+          <h2 className="text-2xl font-bold text-amber-400 font-Orbitron">
             <a href="#home">TransRomero Group</a>
           </h2>
         </div>
         <button
-          className={`md:hidden flex flex-col items-center gap-1.5 p-2`}
+          className={`lg:hidden flex flex-col items-center gap-1.5 p-2`}
           onClick={toggleMenu}
           aria-label="Abrir menu"
         >
@@ -54,13 +54,13 @@ export const Navbar = () => {
 
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 95 }}
+            initial={{ opacity: 0, y: 93 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, y: 95 }}
+            exit={{ opacity: 0, y: 93 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute md:hidden bg-[#000]/90 h-screen w-full  -top-0 -right-0 rounded-lg  p-2"
+            className="absolute lg:hidden bg-[#000]/90 h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
           >
-            <ul className="flex flex-col justify-start items-center  h-full gap-25 font-Orbitron ">
+            <ul className="flex flex-col justify-center items-center   gap-40 font-Orbitron ">
               <li
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
@@ -149,7 +149,7 @@ export const Navbar = () => {
           </motion.div>
         )}
 
-        <div className=" hidden md:flex justify-between gap-7 list-none items-center font-Orbitron">
+        <div className=" hidden lg:flex justify-between gap-7 list-none items-center font-Orbitron">
           <a
             className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
             href="#home"

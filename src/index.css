@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap');@import "tailwindcss";
 
 @theme {
-    --font-Orbitron: "Orbitron", sans-serif; 
-   --font-Poppins: "Poppins" , sans-serif;
+    --font-orbitron: "orbitron", sans-serif; 
+   --font-poppins: "poppins" , sans-serif;
   }
