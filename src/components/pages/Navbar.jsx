@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { UseStateHook } from "../hooks/UseStateHook";
+import { Form } from "../Form";
 
 export const Navbar = () => {
   const dropdownRef = useRef(null);
@@ -256,6 +257,7 @@ export const Navbar = () => {
               </g>
             </svg>
           </a>
+          <Form />
         </div>
       </div>
     </div>
