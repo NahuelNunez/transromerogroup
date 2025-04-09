@@ -9,7 +9,7 @@ export const useFormHook = (initialValue = {}) => {
             ...prev,
             [name]: value,
         }));
-        console.log({ name, value });
+
 
 
 

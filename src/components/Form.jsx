@@ -1,30 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormHook } from "./hooks/useFormHook";
+import { useExpresoCuyano } from "./ExpresoCuyano/Store/useExpresoCuyano";
+import { Logout } from "../../Auth/components/Logout";
 
 export const Form = () => {
   const [openform, setOpenform] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Datos del formulario:", input);
-    reset;
-  };
-  const { handleChange, input, reset } = useFormHook({
+  const { handleChange, input, reset, setInput } = useFormHook({
     titulo: "",
     descripcion: "",
     precio: 0,
+    validaHasta: "",
   });
+  const { postPromocion, getPromocion } = useExpresoCuyano();
+
+  const handleSubmit = async () => {
+    const isoDate = new Date(input.validaHasta).toISOString();
+
+    const datos = {
+      ...input,
+      validaHasta: isoDate,
+    };
+
+    try {
+      const response = await postPromocion(datos);
+    } catch (error) {
+      console.error("Error al crear promocion", error);
+    }
+    reset();
+  };
 
   return (
-    <div className="">
-      <button
-        className="text-white"
-        onClick={() => {
-          setOpenform(true);
-        }}
-      >
-        {" "}
-        Add me
-      </button>
+    <div className="font-orbitron">
+      <div className="flex justify-center items-center gap-20">
+        <button
+          className="text-white cursor-pointer hover:text-red-500 transition-all duration-[0.2s]"
+          onClick={() => {
+            setOpenform(true);
+          }}
+        >
+          {" "}
+          Agregar viajes
+        </button>
+        <Logout />
+      </div>
       {openform ? (
         <div className="absolute backdrop-blur-xs   min-h-screen inset-0 ">
           <div className="flex justify-center items-center h-full">
@@ -56,6 +74,7 @@ export const Form = () => {
               <input
                 name="validaHasta"
                 type="datetime-local"
+                onChange={handleChange}
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque fecha expiracion"
               ></input>

@@ -2,8 +2,13 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { UseStateHook } from "../hooks/UseStateHook";
 import { Form } from "../Form";
+import { Login } from "../../../Auth/components/Login";
+import { useAuth } from "../../../Auth/store/useAuth";
+import { LogOut } from "lucide-react";
+import { Logout } from "../../../Auth/components/Logout";
 
 export const Navbar = () => {
+  const { user } = useAuth();
   const dropdownRef = useRef(null);
   const { Open, setOpen, toggleMenu, setIsMenuOpen, isMenuOpen } =
     UseStateHook();
@@ -23,7 +28,7 @@ export const Navbar = () => {
     <div className="bg-[#000] w-full fixed top-0  mr-auto ml-auto  z-[9999] p-6 pl-[20px] pr-[20px]">
       <div className="flex justify-between lg:justify-around w-full items-center text-white  ">
         <div>
-          <h2 className="text-2xl font-bold text-amber-400 font-Orbitron">
+          <h2 className="text-2xl font-bold text-amber-400 font-orbitron">
             <a href="#home">TransRomero Group</a>
           </h2>
         </div>
@@ -61,7 +66,7 @@ export const Navbar = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute lg:hidden bg-[#000]/90 h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
           >
-            <ul className="flex flex-col justify-center items-center   gap-40 font-Orbitron ">
+            <ul className="flex flex-col justify-center items-center   gap-40 font-orbitron ">
               <li
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
@@ -150,7 +155,7 @@ export const Navbar = () => {
           </motion.div>
         )}
 
-        <div className=" hidden lg:flex justify-between gap-7 list-none items-center font-Orbitron">
+        <div className=" hidden lg:flex justify-between gap-7 list-none items-center font-orbitron">
           <a
             className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
             href="#home"
@@ -212,52 +217,16 @@ export const Navbar = () => {
               >
                 <ul className="py-2 flex flex-col justify-between gap-4">
                   <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
-                    <a>ExpresoCuyano</a>
+                    <a href="#expresocuyano">ExpresoCuyano</a>
                   </li>
                   <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
-                    <a>MegaPack</a>
+                    <a href="#megapack">MegaPack</a>
                   </li>
                 </ul>
               </motion.div>
             )}
           </div>
-          <a className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1.5em"
-              height="1.5em"
-              viewBox="0 0 24 24"
-            >
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeDasharray="28"
-                strokeDashoffset="28"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
-                <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
-                  <animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    dur="0.4s"
-                    values="28;0"
-                  />
-                </path>
-                <path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z">
-                  <animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="0.4s"
-                    dur="0.4s"
-                    values="28;0"
-                  />
-                </path>
-              </g>
-            </svg>
-          </a>
-          <Form />
+          {!user ? <Login /> : <Form />}
         </div>
       </div>
     </div>

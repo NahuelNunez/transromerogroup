@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { create } from 'zustand'
 
-const baseUrl = import.meta.env.api_url
+const baseUrl = import.meta.env.VITE_API_URL
 
 
 
@@ -14,22 +14,20 @@ export const useExpresoCuyano = create(() => ({
                     Authorization: `Bearer ${token}`
                 }
             });
-            return { data: response, error: null }
+            return { data: response.data, error: null }
         } catch (error) {
             console.log('Error de autenticacion', error)
             return { data: null, error: error.response || 'Error de autenticacion' }
         }
     },
 
-    getPromocion: async (data, token) => {
+    getPromocion: async (data) => {
         try {
             const response = await axios.get(`${baseUrl}/expresoPromotions/getAll`, {
                 withCredentials: true,
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+
             })
-            return { data: response, error: null };
+            return { data: response.data, error: null };
 
         } catch (error) {
             console.error('Error de autenticacion', error)

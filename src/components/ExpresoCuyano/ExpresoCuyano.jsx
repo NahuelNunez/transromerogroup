@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { FetchApi } from "../hooks/FetchApi";
+
+import { useExpresoCuyano } from "./Store/useExpresoCuyano";
+import { useAuth } from "../../../Auth/store/useAuth";
 
 export const ExpresoCuyano = () => {
+  const { getPromocion } = useExpresoCuyano();
   const [data, setData] = useState([]);
   useEffect(() => {
-    const getData = async () => {
-      const response = await FetchApi();
-
-      setData(response);
-    };
-    getData();
+    FetchGetPromocion();
   }, []);
+
+  const FetchGetPromocion = async () => {
+    const response = await getPromocion();
+    setData(response.data);
+  };
   console.log(data);
+
   return (
-    <section id="#expresocuyano" className="   ">
+    <section id="expresocuyano" className="   ">
       <div className="flex flex-col gap-20 p-4">
         <div>
           <h2 className="font-orbitron text-4xl text-center">
@@ -101,20 +105,13 @@ export const ExpresoCuyano = () => {
         </div>
 
         <div className="container">
-          {data.map((promo, index) => (
-            <div key={index} className="">
-              <img src="" alt="" />
-              <h3>{promo.titulo}</h3>
-              <h4>{promo.descripcion}</h4>
-              <h4>{promo.precio}</h4>
-              <button>Reservar ahora</button>
+          {data.map((promos) => (
+            <div key={promos.id}>
+              <h2>{promos.titulo}</h2>
+              <p>{promos.descripcion}</p>
+              <h3>{promos.precio}</h3>
             </div>
           ))}
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
         </div>
       </div>
     </section>

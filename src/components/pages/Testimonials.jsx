@@ -5,7 +5,7 @@ import { Autoplay, Pagination, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Testimonials = () => {
+export const Testimonials = () => {
   return (
     <section id="#testimonials" className="text-center py-20 px-4 bg-white">
       <h2 className="text-3xl font-bold text-blue-950 mb-6 font-orbitron">
@@ -36,5 +36,3 @@ const Testimonials = () => {
     </section>
   );
 };
-
-export default Testimonials;
