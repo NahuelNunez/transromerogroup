@@ -7,6 +7,7 @@ export const Login = () => {
   useInitializeAuth();
   const [loginmenu, setLoginmenu] = useState(false);
   const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
@@ -22,7 +23,10 @@ export const Login = () => {
     if (userData) {
       setLoginmenu(false);
     } else {
-      console.error("Error de login:", error);
+      setError("Error en email o contraseña");
+      setTimeout(() => {
+        setError("");
+      }, 4000);
     }
   };
   return (
@@ -96,7 +100,7 @@ export const Login = () => {
             >
               <input
                 className="outline-none p-2 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
-                placeholder="NOMBRE USUARIO"
+                placeholder="Email"
                 {...register("email", { required: true })}
               />
               <p className="text-red-500 text-sm">
@@ -105,7 +109,7 @@ export const Login = () => {
 
               <input
                 className="outline-none p-2 appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
-                placeholder="CONTRASEÑA"
+                placeholder="Contraseña"
                 {...register("password", { required: true })}
                 type={`${show ? "text" : "password"}`}
               />
@@ -115,10 +119,12 @@ export const Login = () => {
               <button
                 type="button"
                 onClick={() => setShow(!show)}
-                className="absolute right-95  top-[255px]  -translate-y-1/2 text-gray-400 hover:text-white"
+                className="absolute right-92  top-[220px]  -translate-y-1/2 text-gray-400 hover:text-white"
               >
-                {show ? <EyeOff size={20} /> : <Eye size={20} />}
+                {show ? <EyeOff size={30} /> : <Eye size={30} />}
               </button>
+
+              {error && <p className="text-red-500 font-poppins">{error}</p>}
               <button
                 type="submit"
                 className="bg-red-400 px-2 p-2 cursor-pointer rounded-2xl hover:bg-red-500"

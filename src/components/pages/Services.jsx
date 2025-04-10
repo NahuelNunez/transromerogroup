@@ -1,9 +1,9 @@
 import React from "react";
 import { servicios } from "../../constants/services";
 
-const Services = () => {
+export const Services = () => {
   return (
-    <section className="py-20 md:px-4 font-poppins">
+    <section className="py-20 md:px-4 font-poppins " id="servicios">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="font-orbitron text-2xl font-bold">
           Servicios Inigualables
@@ -59,5 +59,3 @@ const Services = () => {
     </section>
   );
 };
-
-export default Services;
