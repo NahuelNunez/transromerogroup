@@ -6,6 +6,7 @@ import { ExpresoCuyano } from "./components/ExpresoCuyano/ExpresoCuyano";
 import { Testimonials } from "./components/pages/Testimonials";
 import { Services } from "./components/pages/Services";
 import { Contact } from "./components/pages/Contact";
+
 const App = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
       <Services />
       <Testimonials />
       <Contact />
+      <Footer />
     </>
   );
 };
