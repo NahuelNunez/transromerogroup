@@ -5,7 +5,7 @@ export const Contact = () => {
     <section className="relative bg-gradient-to-r mb-4 py-16 font-poppins">
       <div className="relative max-w-[76rem] mx-1 px-1 md:px-4 md:mx-4 lg:px-auto lg:mx-auto grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold font-orbitron">
+          <h2 className="text-3xl font-bold text-blue-950 font-orbitron">
             ¡Prepárate para el mejor viaje!
           </h2>
           <p className="text-lg">
@@ -90,7 +90,7 @@ export const Contact = () => {
             <span>gob Castro y neuquen 32 (s)</span>
           </div>
 
-          <div className="flex gap-6 mt-6 text-gray-600 ">
+          <div className="flex gap-6 mt-6 text-blue-950 ">
             <a
               href="https://google.com"
               className="group h-10 w-10 transition-all duration-300 transform hover:scale-110  hover:text-gray-800 cursor-pointer hover:animate-pulse"

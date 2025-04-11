@@ -5,7 +5,7 @@ export const Services = () => {
   return (
     <section className="py-20 md:px-4 font-poppins " id="servicios">
       <div className="max-w-6xl mx-auto text-center mb-16">
-        <h2 className="font-orbitron text-2xl font-bold">
+        <h2 className="font-orbitron text-2xl font-bold text-blue-950">
           Servicios Inigualables
           <br />
           Excelencia Garantizada
@@ -19,7 +19,7 @@ export const Services = () => {
             className="relative px-1 m-1 group transition-all duration-300"
           >
             <div className="absolute -top-6 left-1/4 scale-85 -translate-x-1/2 z-10 p-3 rounded-full border-2 bg-[#fdfdfd] border-gray-400 shadow-md transition-all duration-300 group-hover:border-gray-500 group-hover:scale-100">
-              <div className="text-xl transition-all duration-300 group-hover:scale-100 text-gray-800">
+              <div className="text-xl transition-all duration-300 group-hover:scale-100 text-blue-950">
                 {servicio.icon}
               </div>
             </div>
