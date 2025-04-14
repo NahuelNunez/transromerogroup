@@ -72,7 +72,7 @@ export const Login = () => {
       </button>
       {loginmenu ? (
         <div className="absolute backdrop-blur-lg inset-0 min-h-screen h-full ">
-          <div className="relative md:w-[50%] md:h-[50%] bg-black/70 rounded-4xl  mx-auto top-40 bottom-0 p-10">
+          <div className="relative md:w-[40%] md:h-[40%] bg-black/70 rounded-4xl  mx-auto top-40 bottom-0 p-10">
             <button
               onClick={() => {
                 setLoginmenu(false);
@@ -98,48 +98,68 @@ export const Login = () => {
               onSubmit={handleSubmit(OnSubmit)}
               className=" flex flex-col justify-evenly w-full h-full items-center gap-5 p-6"
             >
-              <input
-                className="outline-none p-2 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
-                placeholder="Email"
-                {...register("email", { required: true })}
-              />
-              <p className="text-red-500 text-sm">
-                {errors.usuario && "El usuario es requerido"}
-              </p>
+              <div className="relative">
+                <input
+                  className="outline-none p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
+                  placeholder="Email"
+                  {...register("email", { required: true })}
+                />
 
-              <input
-                className="outline-none p-2 appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
-                placeholder="Contraseña"
-                {...register("password", { required: true })}
-                type={`${show ? "text" : "password"}`}
-              />
-              <p className="text-sm text-red-500">
-                {errors.pass && "La contraseña es requerida"}
-              </p>
-              <button
-                type="button"
-                onClick={() => setShow(!show)}
-                className="relative -right-20 -top-20 md:-right-20  md:-top-20 md:-translate-y-1/2 text-gray-400 hover:text-white"
-              >
-                {show ? <EyeOff size={30} /> : <Eye size={30} />}
-              </button>
-
-              {error && <p className="text-red-500 font-poppins">{error}</p>}
-              <button
-                type="submit"
-                className="bg-red-400 px-2 p-2 cursor-pointer rounded-2xl hover:bg-red-500"
-              >
                 <svg
+                  className="absolute right-0 top-0"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="4em"
-                  height="4em"
+                  width="1.5em"
+                  height="1.5em"
                   viewBox="0 0 24 24"
                 >
                   <path
                     fill="currentColor"
-                    d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
+                    d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
                   />
                 </svg>
+              </div>
+              <p className="text-red-500 text-sm">
+                {errors.email && "El email es requerido"}
+              </p>
+              <div className="relative">
+                <input
+                  className="outline-none p-2 pr-10 appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
+                  placeholder="Contraseña"
+                  {...register("password", { required: true })}
+                  type={`${show ? "text" : "password"}`}
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShow(!show)}
+                  className="absolute right-0 top-0  text-gray-400 hover:text-white"
+                >
+                  {show ? <EyeOff size={25} /> : <Eye size={25} />}
+                </button>
+              </div>
+              <p className="text-sm text-red-500">
+                {errors.password && "La contraseña es requerida"}
+              </p>
+              {error && (
+                <p className="text-red-500 font-poppins  -top-5">{error}</p>
+              )}
+
+              <button
+                type="submit"
+                className="bg-red-400 p-3  md:w-[25%]  md:p-3 md:-top-15 cursor-pointer rounded-2xl hover:bg-red-500"
+              >
+                Iniciar Sesion
+                {/* <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="4em"
+                  height="4em"
+                  viewBox="0 0 24 24"
+                  >
+                  <path
+                  fill="currentColor"
+                  d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
+                  />
+                  </svg> */}
               </button>
             </form>
           </div>

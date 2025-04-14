@@ -63,7 +63,7 @@ export const Form = () => {
           <div className="flex justify-center items-center h-full">
             <form
               onSubmit={handleSubmit}
-              className="w-[50%] bg-black/90 h-[50%] text-white flex flex-col rounded-4xl justify-around items-center"
+              className="h-[70%] w-full p-4 md:p-0 md:w-[50%] bg-black/90 md:h-[50%] text-white flex flex-col rounded-4xl justify-around items-center"
             >
               <h2 className="font-orbitron">Agregar Promocion</h2>
               <input
@@ -71,14 +71,14 @@ export const Form = () => {
                 name="titulo"
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white "
                 placeholder="Coloque el titulo"
-              ></input>
+              />
 
               <input
                 onChange={handleChange}
                 name="descripcion"
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque descripcion"
-              ></input>
+              />
               <input
                 onChange={handleChange}
                 type="number"
@@ -93,7 +93,7 @@ export const Form = () => {
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque fecha expiracion"
               ></input>
-              <div className="flex justify-center items-center gap-30">
+              <div className="flex justify-center items-center md:gap-30 gap-10">
                 <button
                   type="submit"
                   className="bg-green-500 font-poppins p-3  px-7 rounded-full hover:scale-110 cursor-pointer transition-all ease-in duration-[0.2s]"

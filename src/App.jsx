@@ -6,6 +6,7 @@ import { ExpresoCuyano } from "./components/ExpresoCuyano/ExpresoCuyano";
 import { Testimonials } from "./components/pages/Testimonials";
 import { Services } from "./components/pages/Services";
 import { Contact } from "./components/pages/Contact";
+import { WhatsApp } from "./components/WhatsApp";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsApp />
     </>
   );
 };
