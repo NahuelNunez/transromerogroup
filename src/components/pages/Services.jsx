@@ -3,7 +3,7 @@ import { servicios } from "../../constants/services";
 
 export const Services = () => {
   return (
-    <section className="py-20 md:px-4 font-poppins " id="servicios">
+    <section id="servicios" className="py-20 md:px-4 font-poppins scroll-mt-28">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="font-orbitron text-2xl font-bold text-blue-950">
           Servicios Inigualables

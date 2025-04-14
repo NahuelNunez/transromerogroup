@@ -71,7 +71,7 @@ export const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
               >
-                <a href="#home">Inicio</a>
+                <a href="#inicio">Inicio</a>
               </li>
               <li
                 onClick={() => setIsMenuOpen(false)}
@@ -151,6 +151,7 @@ export const Navbar = () => {
                   </motion.div>
                 )}
               </li>
+              {!user ? <Login /> : <Form />}
             </ul>
           </motion.div>
         )}
@@ -158,15 +159,27 @@ export const Navbar = () => {
         <div className=" hidden lg:flex justify-between gap-7 list-none items-center font-orbitron">
           <a
             className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
-            href="#home"
+            href="#inicio"
           >
             Inicio
           </a>
 
-          <a className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] ">
+          <a
+            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            href="#servicios"
+          >
             Servicios
           </a>
-          <a className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] ">
+          <a
+            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            href="#testimonios"
+          >
+            Testimonios
+          </a>
+          <a
+            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            href="#contactanos"
+          >
             Contactanos
           </a>
           <div className="relative inline-block text-left" ref={dropdownRef}>

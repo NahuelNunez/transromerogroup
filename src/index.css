@@ -4,3 +4,7 @@
     --font-orbitron: "orbitron", sans-serif; 
    --font-poppins: "poppins" , sans-serif;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }

@@ -33,6 +33,33 @@ export const useExpresoCuyano = create(() => ({
             console.error('Error de autenticacion', error)
             return { data: null, error: error.response || 'Error de autenticacion' };
         }
+    },
+    editPromocion: async (data, id) => {
+        try {
+            const response = await axios.patch(`${baseUrl}/expresoPromotions/editPromo/${id}`, data, {
+                withCredentials: true,
+
+            })
+            return { data: response.data, error: null }
+        } catch (error) {
+            console.error('Error de autenticacion', error)
+            return { data: null, error: error.response || 'Error de autenticacion' };
+        }
+    },
+    deletePromocion: async (id, token) => {
+        try {
+            const response = await axios.delete(`${baseUrl}/expresoPromotions/delPromo/${id}`, {
+                withCredentials: true,
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+
+            })
+            return { data: response.data, error: null }
+        } catch (error) {
+            console.error('Error al eliminar la promocion', error)
+            return { data: null, error: error.response || 'Error de autenticacion' }
+        }
     }
 }))
 

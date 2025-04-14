@@ -2,7 +2,10 @@ import React from "react";
 
 export const Contact = () => {
   return (
-    <section className="relative bg-gradient-to-r mb-4 py-16 font-poppins">
+    <section
+      id="contactanos"
+      className="relative bg-gradient-to-r mb-4 py-16 font-poppins"
+    >
       <div className="relative max-w-[76rem] mx-1 px-1 md:px-4 md:mx-4 lg:px-auto lg:mx-auto grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-blue-950 font-orbitron">

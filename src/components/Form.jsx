@@ -1,36 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormHook } from "./hooks/useFormHook";
 import { useExpresoCuyano } from "./ExpresoCuyano/Store/useExpresoCuyano";
 import { Logout } from "../../Auth/components/Logout";
+import { useAuth } from "../../Auth/store/useAuth";
+import { toast, ToastContainer } from "react-toastify";
+import { UseStateHook } from "./hooks/UseStateHook";
 
 export const Form = () => {
-  const [openform, setOpenform] = useState(false);
+  const { user } = useAuth();
+
   const { handleChange, input, reset, setInput } = useFormHook({
     titulo: "",
     descripcion: "",
     precio: 0,
-    validaHasta: "",
+    valida_hasta: "",
   });
+
+  const [openform, setOpenform] = useState(false);
   const { postPromocion, getPromocion } = useExpresoCuyano();
 
-  const handleSubmit = async () => {
-    const isoDate = new Date(input.validaHasta).toISOString();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const fechaISO = new Date(input.valida_hasta + "T18:00:00Z").toISOString();
 
     const datos = {
       ...input,
-      validaHasta: isoDate,
+      precio: parseFloat(input.precio),
+      valida_hasta: fechaISO,
     };
-
     try {
-      const response = await postPromocion(datos);
+      const response = await postPromocion(datos, user.token);
+
+      if (response.data) {
+        toast.success("Promocion creada exitosamente");
+      }
     } catch (error) {
-      console.error("Error al crear promocion", error);
+      console.error("No se pudo crear la promocion", error);
+      toast.error("No se pudo crear la promocion");
     }
     reset();
+    setOpenform(false);
   };
 
   return (
     <div className="font-orbitron">
+      <ToastContainer />
       <div className="flex justify-center items-center gap-20">
         <button
           className="text-white cursor-pointer hover:text-red-500 transition-all duration-[0.2s]"
@@ -72,8 +87,8 @@ export const Form = () => {
                 placeholder="Coloque el precio"
               ></input>
               <input
-                name="validaHasta"
-                type="datetime-local"
+                name="valida_hasta"
+                type="date"
                 onChange={handleChange}
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque fecha expiracion"

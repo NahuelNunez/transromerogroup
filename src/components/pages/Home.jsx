@@ -3,8 +3,8 @@ import React from "react";
 export const Home = () => {
   return (
     <section
-      className="relative   w-full  bg-cover bg-center  bg-[url('images/home1.jpeg')]"
-      id="home"
+      className="relative   w-full  bg-cover bg-center  bg-[url('images/home1.jpeg')] scroll-0"
+      id="inicio"
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="flex  flex-col gap-30 w-full lg:mt-20  ">

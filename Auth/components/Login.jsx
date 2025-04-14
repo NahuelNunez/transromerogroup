@@ -72,12 +72,12 @@ export const Login = () => {
       </button>
       {loginmenu ? (
         <div className="absolute backdrop-blur-lg inset-0 min-h-screen h-full ">
-          <div className="relative w-[50%] h-[50%] bg-black/70 rounded-4xl  mx-auto top-40 bottom-0 p-10">
+          <div className="relative md:w-[50%] md:h-[50%] bg-black/70 rounded-4xl  mx-auto top-40 bottom-0 p-10">
             <button
               onClick={() => {
                 setLoginmenu(false);
               }}
-              className="absolute right-20 cursor-pointer hover:opacity-50"
+              className="absolute right-5 md:right-20 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ export const Login = () => {
               <button
                 type="button"
                 onClick={() => setShow(!show)}
-                className="absolute right-92  top-[220px]  -translate-y-1/2 text-gray-400 hover:text-white"
+                className="relative -right-20 -top-20 md:-right-20  md:-top-20 md:-translate-y-1/2 text-gray-400 hover:text-white"
               >
                 {show ? <EyeOff size={30} /> : <Eye size={30} />}
               </button>
