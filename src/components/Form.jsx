@@ -4,12 +4,11 @@ import { useExpresoCuyano } from "./ExpresoCuyano/Store/useExpresoCuyano";
 import { Logout } from "../../Auth/components/Logout";
 import { useAuth } from "../../Auth/store/useAuth";
 import { toast, ToastContainer } from "react-toastify";
-import { UseStateHook } from "./hooks/UseStateHook";
 
 export const Form = () => {
   const { user } = useAuth();
 
-  const { handleChange, input, reset, setInput } = useFormHook({
+  const { handleChange, input, reset } = useFormHook({
     titulo: "",
     descripcion: "",
     precio: 0,
@@ -17,7 +16,7 @@ export const Form = () => {
   });
 
   const [openform, setOpenform] = useState(false);
-  const { postPromocion, getPromocion } = useExpresoCuyano();
+  const { postPromocion } = useExpresoCuyano();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
