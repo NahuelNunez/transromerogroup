@@ -96,22 +96,22 @@ export const Login = () => {
                 />
               </svg>
             </button>
-            <h2 className="font-orbitron text-center text-2xl mb-2">
-              Iniciar Sesión
-            </h2>
             <form
               onSubmit={handleSubmit(OnSubmit)}
-              className=" flex flex-col justify-evenly w-full items-center gap-5 "
+              className="relative flex flex-col justify-evenly  items-center gap-5 "
             >
+              <h2 className="font-orbitron text-center text-2xl mb-2">
+                Iniciar Sesión
+              </h2>
               <div className="relative mb-2">
                 <input
-                  className="outline-none p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
+                  className="outline-none w-[80%] md:w-full p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
                   placeholder="Email"
                   {...register("email", { required: true })}
                 />
 
                 <svg
-                  className="absolute  right-0 top-0"
+                  className="absolute  right-12 top-0 md:top-0 md:-right-0"
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
                   height="1.5em"
@@ -128,7 +128,7 @@ export const Login = () => {
               </div>
               <div className="relative">
                 <input
-                  className="outline-none p-2 pr-10 appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
+                  className="outline-none p-2 pr-10 w-[80%] md:w-full appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
                   placeholder="Contraseña"
                   {...register("password", { required: true })}
                   type={`${show ? "text" : "password"}`}
@@ -137,7 +137,7 @@ export const Login = () => {
                 <button
                   type="button"
                   onClick={() => setShow(!show)}
-                  className="absolute right-0 top-0  text-gray-400 hover:text-white"
+                  className="absolute  right-12 top-0 md:top-0 md:-right-0  text-gray-400 hover:text-white"
                 >
                   {show ? <EyeOff size={25} /> : <Eye size={25} />}
                 </button>
