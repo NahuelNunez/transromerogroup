@@ -1,5 +1,5 @@
 export const WhatsApp = () => {
-  const phoneNumber = "5492644030147";
+  const phoneNumber = "5492645252157";
 
   const waLink = `https://wa.me/${phoneNumber}`;
   return (

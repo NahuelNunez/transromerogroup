@@ -26,7 +26,7 @@ export const ExpresoCuyano = () => {
   *Precio:* $ ARS ${datos.precio}
   
   `;
-    const phoneNumber = `5492645778174`;
+    const phoneNumber = `5492645252157`;
     const encodedMessage = encodeURIComponent(message);
     const waLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(waLink, "_blank");
