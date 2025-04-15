@@ -3,7 +3,7 @@ import React from "react";
 export const Home = () => {
   return (
     <section
-      className="relative   w-full   bg-cover bg-center bg-[url('public/images/home1.jpeg')] "
+      className="relative   w-full   bg-cover bg-center bg-[url('/images/home1.jpeg')] "
       id="inicio"
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
