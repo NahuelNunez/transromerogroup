@@ -2,14 +2,26 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#0b1120] text-white py-12 px-6 md:px-20 font-poppins">
-      <div className="max-w-6xl mx-auto">
-        <div className="relative w-full h-px bg-gray-700 mb-10"></div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-          <div className="pl-3 border-l-gray-700 text-center md:text-left space-y-2">
-            <p className="text-lg ">Diseñado y desarrollado por:</p>
-            <div className="flex items-center justify-center md:justify-start gap-3 text-sm text-gray-400">
-              <span className="mr-1.5">Agustin Paez </span>
+    <footer className="bg-[#0b1120] text-white py-2 font-poppins">
+      <div className="max-w-[74.5rem] mx-auto">
+        <div className="relative w-full h-px bg-gray-700 mb-2"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-10 items-start">
+          <div className="text-center md:text-left space-y-4">
+            <p className="text-sm text-gray-500">
+              Copyright &copy; {new Date().getFullYear()} TransRomero Group{" "}
+              <br />
+              Todos los derechos reservados.
+            </p>
+          </div>
+
+          <div className="text-center space-y-4">
+            {/* Bloque opcional o para uso futuro */}
+          </div>
+
+          <div className="pr-1 border-r-gray-700 text-center md:text-right space-y-0.5 text-[10px]">
+            <p>Diseñado y desarrollado por:</p>
+            <div className="flex items-center justify-center md:justify-end gap-3 text-[11px] text-gray-400">
+              <span className="mr-1.5">Agustin Paez</span>
               <a
                 href="https://github.com/AgusPaez"
                 target="_blank"
@@ -47,7 +59,7 @@ export const Footer = () => {
                 </svg>
               </a>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-3 text-sm text-gray-400">
+            <div className="flex items-center justify-center md:justify-end gap-3 text-[11px] text-gray-400">
               <span>Nahuel Nuñez</span>
               <a
                 href="https://github.com/NahuelNunez"
@@ -87,16 +99,9 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="text-center space-y-4">
-            <p className="text-sm text-gray-500">
-              Copyright &copy; {new Date().getFullYear()} TransRomero Group{" "}
-              <br></br> <br></br> <br></br>
-              Todos los derechos reservados.<br></br>
-            </p>
-          </div>
         </div>
-        <div className="w-full h-px bg-gray-700 mt-10 mb-6"></div>
-        <p className="text-center text-xs text-gray-500 italic">
+        <div className="w-full h-px bg-gray-700 mt-1 mb-2"></div>
+        <p className="text-center text-[10px] text-gray-500 italic">
           Proyecto realizado con {" <3 "} por Agustin & Nahuel.
         </p>
       </div>
