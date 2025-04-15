@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormHook } from "./hooks/useFormHook";
 import { useExpresoCuyano } from "./ExpresoCuyano/Store/useExpresoCuyano";
 import { Logout } from "../../Auth/components/Logout";
@@ -17,7 +17,6 @@ export const Form = () => {
 
   const [openform, setOpenform] = useState(false);
   const { postPromocion } = useExpresoCuyano();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,13 +32,17 @@ export const Form = () => {
 
       if (response.data) {
         toast.success("Promocion creada exitosamente");
+
+        reset();
+        setOpenform(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       }
     } catch (error) {
       console.error("No se pudo crear la promocion", error);
       toast.error("No se pudo crear la promocion");
     }
-    reset();
-    setOpenform(false);
   };
 
   return (

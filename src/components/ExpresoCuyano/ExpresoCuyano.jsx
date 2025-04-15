@@ -45,7 +45,6 @@ export const ExpresoCuyano = () => {
       console.error("Error al eliminar la promocion", error);
     }
   }
-  console.log(data);
 
   return (
     <section id="expresocuyano" className="   ">
