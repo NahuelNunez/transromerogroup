@@ -98,20 +98,20 @@ export const Login = () => {
             </button>
             <form
               onSubmit={handleSubmit(OnSubmit)}
-              className="relative flex flex-col justify-evenly  items-center gap-5 "
+              className="  relative flex flex-col justify-center  items-center gap-5 "
             >
-              <h2 className="font-orbitron text-center text-2xl mb-2">
+              <h2 className="font-orbitron text-center text-2xl mb-2 ">
                 Iniciar Sesión
               </h2>
-              <div className="relative mb-2">
+              <div className="flex justify-center  items-center">
                 <input
-                  className="outline-none w-[80%] md:w-full p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
+                  className="outline-none  w-[50%] md:w-[80%] p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
                   placeholder="Email"
                   {...register("email", { required: true })}
                 />
 
                 <svg
-                  className="absolute  right-12 top-0 md:top-0 md:-right-0"
+                  className="absolute right-20   md:top-15 md:right-5"
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
                   height="1.5em"
@@ -122,26 +122,26 @@ export const Login = () => {
                     d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
                   />
                 </svg>
-                <p className="text-red-500 text-sm absolute">
+                <p className="text-red-500 text-sm absolute top-27">
                   {errors.email && "El email es requerido"}
                 </p>
               </div>
-              <div className="relative">
+              <div className="flex justify-center items-center">
                 <input
-                  className="outline-none p-2 pr-10 w-[80%] md:w-full appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
+                  className="outline-none p-2 pr-10 w-[50%] md:w-[80%]  appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
                   placeholder="Contraseña"
                   {...register("password", { required: true })}
-                  type={`${show ? "text" : "password"}`}
+                  type={`${show ? "password" : "text"}`}
                 />
 
                 <button
                   type="button"
                   onClick={() => setShow(!show)}
-                  className="absolute  right-12 top-0 md:top-0 md:-right-0  text-gray-400 hover:text-white"
+                  className="absolute right-20    md:top-30 md:right-5  text-gray-400 hover:text-white"
                 >
                   {show ? <EyeOff size={25} /> : <Eye size={25} />}
                 </button>
-                <p className="text-sm text-red-500 absolute">
+                <p className="text-sm text-red-500 absolute top-41 ">
                   {errors.password && "La contraseña es requerida"}
                 </p>
               </div>
