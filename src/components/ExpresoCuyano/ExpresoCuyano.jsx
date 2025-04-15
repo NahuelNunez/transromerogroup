@@ -21,7 +21,6 @@ export const ExpresoCuyano = () => {
 
   const HandleWspClick = (datos) => {
     const message = `Hola,necesito más información acerca de esta promoción de viaje:
-  *N°Promocion:* ${datos.id}
   *Titulo:* ${datos.titulo}
   *Descripcion:* ${datos.descripcion}
   *Precio:* $ ARS ${datos.precio}
