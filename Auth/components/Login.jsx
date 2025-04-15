@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 import useAuth, { useInitializeAuth } from "../hooks/useInitializeAuth";
+import { ToastContainer, toast } from "react-toastify";
+
 export const Login = () => {
   const { login, user } = useAuth();
   useInitializeAuth();
@@ -21,6 +23,7 @@ export const Login = () => {
   const OnSubmit = async (data) => {
     const { data: userData, error } = await login(data);
     if (userData) {
+      toast.success("Login exitoso");
       setLoginmenu(false);
     } else {
       setError("Error en email o contraseña");
@@ -31,6 +34,8 @@ export const Login = () => {
   };
   return (
     <div className="">
+      <ToastContainer />
+
       <button
         onClick={openMenu}
         className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
