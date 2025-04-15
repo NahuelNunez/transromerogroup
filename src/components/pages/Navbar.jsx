@@ -66,7 +66,7 @@ export const Navbar = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute lg:hidden bg-[#000]/90 h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
           >
-            <ul className="flex flex-col justify-center items-center   gap-30 font-orbitron ">
+            <ul className="flex flex-col justify-center items-center gap-23   md:gap-30 font-orbitron ">
               <li
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"

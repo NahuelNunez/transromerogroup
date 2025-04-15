@@ -71,13 +71,13 @@ export const Login = () => {
         </svg>
       </button>
       {loginmenu ? (
-        <div className="absolute backdrop-blur-lg inset-0 min-h-screen h-full ">
-          <div className="relative md:w-[40%] md:h-[40%] bg-black/70 rounded-4xl  mx-auto top-40 bottom-0 p-10">
+        <div className="absolute backdrop-blur-lg inset-0 min-h-screen  ">
+          <div className="relative w-[85%] h-[50%] md:w-[40%] md:h-[40%] bg-black/70 rounded-4xl   mx-auto flex flex-col justify-center items-center -bottom-50">
             <button
               onClick={() => {
                 setLoginmenu(false);
               }}
-              className="absolute right-5 md:right-20 cursor-pointer hover:opacity-50"
+              className="absolute right-5 top-5 md:right-5 md:top-5 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,14 +91,14 @@ export const Login = () => {
                 />
               </svg>
             </button>
-            <h2 className="font-orbitron text-center text-2xl">
+            <h2 className="font-orbitron text-center text-2xl mb-2">
               Iniciar Sesión
             </h2>
             <form
               onSubmit={handleSubmit(OnSubmit)}
-              className=" flex flex-col justify-evenly w-full h-full items-center gap-5 p-6"
+              className=" flex flex-col justify-evenly w-full items-center gap-5 "
             >
-              <div className="relative">
+              <div className="relative mb-2">
                 <input
                   className="outline-none p-2 pr-10 border-b-1 font-poppins border-gray-500 placeholder:text-[12px]  focus:border-b-white focus:transition-all  focus:duration-[0.2s]  "
                   placeholder="Email"
@@ -106,7 +106,7 @@ export const Login = () => {
                 />
 
                 <svg
-                  className="absolute right-0 top-0"
+                  className="absolute  right-0 top-0"
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.5em"
                   height="1.5em"
@@ -117,10 +117,10 @@ export const Login = () => {
                     d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
                   />
                 </svg>
+                <p className="text-red-500 text-sm absolute">
+                  {errors.email && "El email es requerido"}
+                </p>
               </div>
-              <p className="text-red-500 text-sm">
-                {errors.email && "El email es requerido"}
-              </p>
               <div className="relative">
                 <input
                   className="outline-none p-2 pr-10 appearance-none text-white font-poppins  placeholder:text-[12px]  border-b-1 border-gray-500  focus:border-b-white focus:transition-all  focus:duration-[0.2s] "
@@ -136,17 +136,17 @@ export const Login = () => {
                 >
                   {show ? <EyeOff size={25} /> : <Eye size={25} />}
                 </button>
+                <p className="text-sm text-red-500 absolute">
+                  {errors.password && "La contraseña es requerida"}
+                </p>
               </div>
-              <p className="text-sm text-red-500">
-                {errors.password && "La contraseña es requerida"}
-              </p>
               {error && (
                 <p className="text-red-500 font-poppins  -top-5">{error}</p>
               )}
 
               <button
                 type="submit"
-                className="bg-red-400 p-3  md:w-[25%]  md:p-3 md:-top-15 cursor-pointer rounded-2xl hover:bg-red-500"
+                className="bg-red-400 relative p-4 mt-2 cursor-pointer rounded-2xl hover:bg-red-500"
               >
                 Iniciar Sesion
                 {/* <svg
