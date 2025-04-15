@@ -122,7 +122,7 @@ export const Login = () => {
                     d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
                   />
                 </svg>
-                <p className="text-red-500 text-sm absolute top-27">
+                <p className="text-red-500 text-sm font-poppins absolute top-27">
                   {errors.email && "El email es requerido"}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export const Login = () => {
                 >
                   {show ? <EyeOff size={25} /> : <Eye size={25} />}
                 </button>
-                <p className="text-sm text-red-500 absolute top-41 ">
+                <p className="text-sm text-red-500 font-poppins absolute top-41 ">
                   {errors.password && "La contraseña es requerida"}
                 </p>
               </div>
