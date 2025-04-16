@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 export const Form = () => {
   const { user } = useAuth();
 
-  const { handleChange, input, reset } = useFormHook({
+  const { handleChange, input, reset, validate, error } = useFormHook({
     titulo: "",
     descripcion: "",
     precio: 0,
@@ -19,7 +19,7 @@ export const Form = () => {
   const { postPromocion } = useExpresoCuyano();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if (!validate()) return;
     const fechaISO = new Date(input.valida_hasta + "T18:00:00Z").toISOString();
 
     const datos = {
@@ -75,26 +75,47 @@ export const Form = () => {
                 placeholder="Coloque el titulo"
               />
 
+              {error.titulo && (
+                <p className="text-sm text-red-500 font-poppins">
+                  {error.titulo}
+                </p>
+              )}
+
               <input
                 onChange={handleChange}
                 name="descripcion"
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque descripcion"
               />
+              {error.descripcion && (
+                <p className="text-sm text-red-500 font-poppins">
+                  {error.descripcion}
+                </p>
+              )}
               <input
                 onChange={handleChange}
                 type="number"
                 name="precio"
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
-                placeholder="Coloque el precio"
-              ></input>
+                placeholder="Coloque el precio sin puntos"
+              />
+              {error.precio && (
+                <p className="text-sm text-red-500 font-poppins">
+                  {error.precio}
+                </p>
+              )}
               <input
                 name="valida_hasta"
                 type="date"
                 onChange={handleChange}
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque fecha expiracion"
-              ></input>
+              />
+              {error.valida_hasta && (
+                <p className="text-sm text-red-500 font-poppins">
+                  {error.valida_hasta}
+                </p>
+              )}
               <div className="flex justify-center items-center md:gap-30 gap-10">
                 <button
                   type="submit"
