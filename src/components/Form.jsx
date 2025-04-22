@@ -4,6 +4,7 @@ import { useExpresoCuyano } from "./ExpresoCuyano/Store/useExpresoCuyano";
 import { Logout } from "../../Auth/components/Logout";
 import { useAuth } from "../../Auth/store/useAuth";
 import { toast, ToastContainer } from "react-toastify";
+import { useMegaPack } from "./ExpresoCuyano/Store/useMegaPack";
 
 export const Form = () => {
   const { user } = useAuth();
@@ -11,33 +12,49 @@ export const Form = () => {
   const { handleChange, input, reset, validate, error } = useFormHook({
     titulo: "",
     descripcion: "",
-    precio: 0,
+    precio: "",
     valida_hasta: "",
+    tipo: "",
   });
 
   const [openform, setOpenform] = useState(false);
-  const { postPromocion } = useExpresoCuyano();
+  const { postPromocion, getPromocion } = useExpresoCuyano();
+  const {
+    postPromocion: postPromocionMegaPack,
+    getPromocion: getPromocionMegapack,
+  } = useMegaPack();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-    const fechaISO = new Date(input.valida_hasta + "T18:00:00Z").toISOString();
+    const fecha = "2027-12-31T00:00:00.000Z";
 
     const datos = {
       ...input,
       precio: parseFloat(input.precio),
-      valida_hasta: fechaISO,
+      valida_hasta: fecha,
     };
     try {
-      const response = await postPromocion(datos, user.token);
+      let response;
+      if (input.tipo === "expresocuyano") {
+        response = await postPromocion(datos, user.token);
+      } else if (input.tipo === "megapack") {
+        response = await postPromocionMegaPack(datos, user.token);
+      } else {
+        toast.error("Tipo de promoción inválido");
+        return;
+      }
 
       if (response.data) {
         toast.success("Promocion creada exitosamente");
 
         reset();
         setOpenform(false);
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
+        if (input.tipo === "expresocuyano") {
+          await getPromocion();
+        } else if (input.tipo === "megapack") {
+          await getPromocionMegapack();
+        }
       }
     } catch (error) {
       console.error("No se pudo crear la promocion", error);
@@ -68,6 +85,22 @@ export const Form = () => {
               className="h-[70%] w-full p-4 md:p-0 md:w-[50%] bg-black/90 md:h-[50%] text-white flex flex-col rounded-4xl justify-around items-center"
             >
               <h2 className="font-orbitron">Agregar Promocion</h2>
+              <select
+                name="tipo"
+                onChange={handleChange}
+                value={input.tipo}
+                className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white bg-black text-white"
+              >
+                <option value="">Selecciona un tipo</option>
+                <option value="expresocuyano">Expreso Cuyano</option>
+                <option value="megapack">Megapack</option>
+              </select>
+              {error.tipo && (
+                <p className="text-sm text-red-500 font-poppins">
+                  {error.tipo}
+                </p>
+              )}
+
               <input
                 onChange={handleChange}
                 name="titulo"
@@ -102,18 +135,6 @@ export const Form = () => {
               {error.precio && (
                 <p className="text-sm text-red-500 font-poppins">
                   {error.precio}
-                </p>
-              )}
-              <input
-                name="valida_hasta"
-                type="date"
-                onChange={handleChange}
-                className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
-                placeholder="Coloque fecha expiracion"
-              />
-              {error.valida_hasta && (
-                <p className="text-sm text-red-500 font-poppins">
-                  {error.valida_hasta}
                 </p>
               )}
               <div className="flex justify-center items-center md:gap-30 gap-10">
