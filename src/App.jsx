@@ -7,6 +7,7 @@ import { Testimonials } from "./components/pages/Testimonials";
 import { Services } from "./components/pages/Services";
 import { Contact } from "./components/pages/Contact";
 import { WhatsApp } from "./components/WhatsApp";
+import { Megapack } from "./components/ExpresoCuyano/Megapack";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Navbar />
       <Home />
       <ExpresoCuyano />
+      <Megapack />
       <Services />
       <Testimonials />
       <Contact />
