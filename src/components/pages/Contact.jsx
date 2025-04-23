@@ -22,11 +22,14 @@ export const Contact = () => {
             <div>
               <h3 className="text-xl font-semibold">TransRomero Group</h3>
               <p>
-                gob Castro y neuquen 32 (s)
+                Saturnino Sarassa 464, Trinidad.
                 <br />
-                San Juan, Argentina
+                San Juan, Argentina.
               </p>
-              <p className="text-sm text-gray-400">+54 264 5778174 / 4340303</p>
+              <p className="text-sm text-gray-400">
+                Tel:{" "}
+                <span className="tracking-tighter"> +54 9 264 525-2157 </span>
+              </p>
             </div>
           </div>
         </div>
@@ -67,7 +70,7 @@ export const Contact = () => {
                 />
               </svg>
             </div>
-            <span>0800 222 3292</span>
+            <span className="tracking-tighter"> +54 9 264 525-2157 </span>
           </div>
           <div className="group bg-[#fcfcfc] px-3 py-2.5  rounded-xl flex items-center gap-4 shadow-sm border border-gray-300 hover:border-gray-400 transition-all duration-200">
             <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-full h-9 w-9 flex items-center justify-center border border-gray-400 transition-all duration-200 group-hover:border-gray-600 group-hover:scale-110 group-hover:from-gray-200 group-hover:to-gray-200">
@@ -90,7 +93,7 @@ export const Contact = () => {
                 </g>
               </svg>
             </div>
-            <span>gob Castro y neuquen 32 (s)</span>
+            <span> Saturnino Sarassa 464. Trinidad, San Juan</span>
           </div>
 
           <div className="flex gap-6 mt-6 text-blue-950 ">
