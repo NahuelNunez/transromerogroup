@@ -39,8 +39,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="pb-6 py-10">
-            {/* <h2 className="font-orbitron text-2xl">VALORES</h2> */}
-            <ul className="flex flex-col md:flex-row justify-between items-center font-poppins  ">
+            <ul className="flex flex-col gap-9 md:flex-row justify-between items-center font-poppins  ">
               <li className="flex flex-col gap-2 items-center md:items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

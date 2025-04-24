@@ -50,7 +50,7 @@ export const ExpresoCuyano = () => {
         <div>
           <h2 className="font-orbitron text-4xl text-center font-semibold text-blue-950">
             <img
-              src="../../../public/images/CUYANO SVG_Definitivo.png"
+              src="/images/CUYANO SVG_Definitivo.png"
               className="mx-auto h-50 w-120 object-contain object-center"
             />
           </h2>

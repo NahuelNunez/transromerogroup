@@ -19,7 +19,7 @@ export const Contact = () => {
           </p>
           <div className="flex items-center gap-9">
             <div className="w-30 text-center  h-28 my-auto">
-              <img src="../../../public/images/TRANSROMERO CUT.png" />
+              <img src="/images/TRANSROMERO CUT.png" />
             </div>
             <div>
               <h3 className="text-xl font-semibold">TransRomero Group</h3>
