@@ -8,7 +8,7 @@ export const Services = () => {
         <h2 className="font-orbitron text-2xl font-bold text-blue-950">
           Servicios Inigualables
           <br />
-          Excelencia Garantizada
+          <h2 className="mt-2">Excelencia Garantizada</h2>
         </h2>
       </div>
 
