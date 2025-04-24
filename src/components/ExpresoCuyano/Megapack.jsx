@@ -40,7 +40,7 @@ export const Megapack = () => {
   return (
     <section id="megapack">
       <div className="mx-auto">
-        <hr className="w-[90rem] mx-auto mt-0.5 text-[#0024663b]" />
+        <hr className="max-w-[90rem]  min-w-[15rem] mx-auto mt-0.5 text-[#0024663b]" />
         <h2 className="font-orbitron text-2xl text-center font-semibold text-blue-950 mt-10 mb-[5rem]">
           Megapack
         </h2>
