@@ -7,8 +7,8 @@ export const Home = () => {
       id="inicio"
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
-      <div className="flex  flex-col gap-5 md:gap-30 w-full lg:mt-20  ">
-        <div className="relative flex flex-col  gap-6 text-white mt-30 px-8 md:mt-5  md:ml-[300px] ">
+      <div className="md:flex  md:flex-col gap-5 md:gap-30 w-full lg:mt-20  ">
+        <div className="relative flex flex-col p-4 gap-6 text-white mt-22 px-8 md:mt-25  md:ml-[100px] lg:ml-[175px] xl:ml-[300px] ">
           <h2 className="text-2xl font-orbitron">QUIENES SOMOS</h2>
           <p className="text-balance font-poppins tracking-wide leading-7 max-w-[450px] ">
             Somos un grupo economico en crecimiento dedicada al transporte de

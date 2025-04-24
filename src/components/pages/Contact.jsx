@@ -18,7 +18,9 @@ export const Contact = () => {
             Derechos Reservados...
           </p>
           <div className="flex items-center gap-9">
-            <div className="w-30 text-center border h-28 my-auto">LOGO</div>
+            <div className="w-30 text-center  h-28 my-auto">
+              <img src="../../../public/images/TRANSROMERO CUT.png" />
+            </div>
             <div>
               <h3 className="text-xl font-semibold">TransRomero Group</h3>
               <p>

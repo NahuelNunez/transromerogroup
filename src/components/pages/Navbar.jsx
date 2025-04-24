@@ -6,6 +6,7 @@ import { Login } from "../../../Auth/components/Login";
 import { useAuth } from "../../../Auth/store/useAuth";
 import { LogOut } from "lucide-react";
 import { Logout } from "../../../Auth/components/Logout";
+import principal from "../../assets/TransromeroGroup.svg";
 
 export const Navbar = () => {
   const { user } = useAuth();
@@ -25,12 +26,18 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <div className="bg-[#000] w-full fixed top-0  mr-auto ml-auto  z-[9999] p-6 pl-[20px] pr-[20px]">
-      <div className="flex justify-between lg:justify-around w-full items-center text-white  ">
-        <div>
-          <h2 className="text-2xl font-bold text-amber-400 font-orbitron">
-            <a href="#home">TransRomero Group</a>
-          </h2>
+    <div className="bg-[#000] w-full fixed top-0  mr-auto ml-auto  z-[9999] p-7 pl-[20px] pr-[20px]">
+      <div className="flex justify-between lg:justify-around  w-full items-center text-white  ">
+        <div className="">
+          <a
+            href="#inicio"
+            className="absolute  top-4 left-4  md:left-4 xl:left-40 lg:left-10"
+          >
+            <img
+              src="../../../public/images/TRANSROMERO CUT.png"
+              className="w-24 object-covers object-center object-contain "
+            />
+          </a>
         </div>
         <button
           className={`lg:hidden flex flex-col items-center gap-1.5 p-2`}
@@ -66,7 +73,7 @@ export const Navbar = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute lg:hidden bg-[#000]/90 h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
           >
-            <ul className="flex flex-col justify-center items-center gap-23   md:gap-30 font-orbitron ">
+            <ul className="flex flex-col justify-around  items-center gap-20 my-4   md:gap-30 font-orbitron ">
               <li
                 onClick={() => setIsMenuOpen(false)}
                 className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
@@ -140,7 +147,7 @@ export const Navbar = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="absolute mt-2 w-40 bg-[#000]/90 p-2 rounded-lg shadow-lg"
                   >
-                    <ul className="py-2 flex flex-col justify-between gap-4">
+                    <ul className="py-2 flex flex-col justify-between gap-1">
                       <li
                         onClick={() => setIsMenuOpen(false)}
                         className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
@@ -162,7 +169,7 @@ export const Navbar = () => {
           </motion.div>
         )}
 
-        <div className=" hidden lg:flex justify-between gap-7 list-none items-center font-orbitron">
+        <div className=" hidden lg:flex justify-between lg:gap-10 list-none items-center font-orbitron">
           <a
             className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
             href="#inicio"

@@ -42,7 +42,10 @@ export const Megapack = () => {
       <div className="mx-auto">
         <hr className="max-w-[90rem]  min-w-[15rem] mx-auto mt-0.5 text-[#0024663b]" />
         <h2 className="font-orbitron text-2xl text-center font-semibold text-blue-950 mt-10 mb-[5rem]">
-          Megapack
+          <img
+            src="../../../public/images/MEGAPACK SVG_DEFINITIVO.png"
+            className="mx-auto w-100 h-50 object-contain object-center"
+          />
         </h2>
       </div>
       <div className="flex flex-col justify-center items-center gap-4">

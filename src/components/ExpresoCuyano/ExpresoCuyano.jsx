@@ -49,7 +49,10 @@ export const ExpresoCuyano = () => {
       <div className="flex flex-col gap-20 p-4">
         <div>
           <h2 className="font-orbitron text-4xl text-center font-semibold text-blue-950">
-            Expreso Cuyano - Tu viaje, nuestra pasión.
+            <img
+              src="../../../public/images/CUYANO SVG_Definitivo.png"
+              className="mx-auto h-50 w-120 object-contain object-center"
+            />
           </h2>
         </div>
 
