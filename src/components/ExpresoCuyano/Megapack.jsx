@@ -43,7 +43,7 @@ export const Megapack = () => {
         <hr className="max-w-[90rem]  min-w-[15rem] mx-auto mt-0.5 text-[#0024663b]" />
         <h2 className="font-orbitron text-2xl text-center font-semibold text-blue-950 mt-10 mb-[5rem]">
           <img
-            src="../../../public/images/MEGAPACK SVG_DEFINITIVO.png"
+            src="/images/MEGAPACK SVG_DEFINITIVO.png"
             className="mx-auto w-100 h-50 object-contain object-center"
           />
         </h2>

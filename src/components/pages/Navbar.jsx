@@ -34,7 +34,7 @@ export const Navbar = () => {
             className="absolute  top-4 left-4  md:left-4 xl:left-40 lg:left-10"
           >
             <img
-              src="../../../public/images/TRANSROMERO CUT.png"
+              src="/images/TRANSROMERO CUT.png"
               className="w-24 object-covers object-center object-contain "
             />
           </a>
