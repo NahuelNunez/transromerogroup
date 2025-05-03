@@ -3,7 +3,7 @@ export const WhatsApp = () => {
 
   const waLink = `https://wa.me/${phoneNumber}`;
   return (
-    <div className="bottom-5 right-5 fixed p-4 rounded-full border-none bg-green-500 scale-80 hover:scale-100 cursor-pointer transition-all duration-300">
+    <div className="bottom-5 right-5 fixed z-[9999] p-4 rounded-full border-none bg-green-500 scale-80 hover:scale-100 cursor-pointer transition-all duration-300">
       <a href={waLink} target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
