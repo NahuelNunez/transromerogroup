@@ -8,6 +8,7 @@ import { Services } from "./components/pages/Services";
 import { Contact } from "./components/pages/Contact";
 import { WhatsApp } from "./components/WhatsApp";
 import { Megapack } from "./components/ExpresoCuyano/Megapack";
+import { Separador } from "./components/Separador";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Home />
       <ExpresoCuyano />
       <Megapack />
+      <Separador />
       <Services />
       <Testimonials />
       <Contact />

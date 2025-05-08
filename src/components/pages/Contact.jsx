@@ -4,43 +4,63 @@ export const Contact = () => {
   return (
     <section
       id="contactanos"
-      className="relative bg-gradient-to-r mb-4 py-16 font-poppins"
+      className="relative bg-gradient-to-b from-orange-50 to-amber-50  py-16 font-poppins"
     >
       <div className="relative max-w-[76rem] mx-1 px-1 md:px-4 md:mx-4 lg:px-auto lg:mx-auto grid md:grid-cols-2 gap-10">
+        {/* Left Column - Enhanced with warm colors */}
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-blue-950 font-orbitron">
-            ¡Prepárate para el mejor viaje!
+          <h2 className="text-4xl font-bold text-amber-800  font-work-sans">
+            ¡Vive la experiencia{" "}
+            <span className="text-orange-500">TransRomero</span>!
           </h2>
-          <p className="text-lg">
-            Llega a tu destino con el mejor precio y atención.
+
+          <p className="text-lg text-gray-700">
+            Llega a tu destino con{" "}
+            <span className="font-semibold text-amber-700">
+              seguridad, comodidad
+            </span>{" "}
+            y el mejor servicio.
           </p>
-          <p className="text-green-600 italic font-semibold">
-            Derechos Reservados...
-          </p>
-          <div className="flex items-center gap-9">
-            <div className="w-30 text-center  h-28 my-auto">
-              <img src="/images/TRANSROMERO CUT.png" />
+
+          <div className="flex items-center gap-9 p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-amber-500">
+            <div className="w-30 text-center h-28 my-auto">
+              <img
+                src="/images/TRANSROMERO CUT.png"
+                className="drop-shadow-md"
+              />
             </div>
             <div>
-              <h3 className="text-xl font-semibold">TransRomero Group</h3>
-              <p>
+              <h3 className="text-xl font-semibold text-gray-800">
+                TransRomero Group
+              </h3>
+              <p className="text-gray-600">
                 Saturnino Sarassa 464, Trinidad.
                 <br />
                 San Juan, Argentina.
               </p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-amber-600 mt-2">
                 Tel:{" "}
-                <span className="tracking-tighter"> +54 9 264 525-2157 </span>
+                <span className="font-medium tracking-tighter">
+                  +54 9 264 525-2157
+                </span>
               </p>
             </div>
           </div>
+
+          {/* <div className="bg-amber-100 rounded-xl p-4 border border-amber-200">
+            <p className="text-amber-800 italic font-medium text-center">
+              "Tu viaje perfecto comienza con nosotros"
+            </p>
+          </div> */}
         </div>
 
+        {/* Right Column - Contact Cards Enhanced */}
         <div className="space-y-5">
-          <div className="group bg-[#fcfcfc] px-3 py-2.5 rounded-xl flex items-center gap-4 shadow-sm border border-gray-300 hover:border-gray-400 transition-all duration-200">
-            <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-full h-9 w-9 flex items-center justify-center border border-gray-400 transition-all duration-200 group-hover:border-gray-600 group-hover:scale-110 group-hover:from-gray-200 group-hover:to-gray-200">
+          {/* Email Card */}
+          <div className="group bg-white px-5 py-4 rounded-xl flex items-center gap-4 shadow-md hover:shadow-lg transition-all duration-300 border-b-3 border-amber-300 hover:border-amber-400">
+            <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-full h-10 w-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
               <svg
-                className="text-gray-600 group-hover:text-gray-700"
+                className="text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.5em"
                 height="1.5em"
@@ -52,15 +72,16 @@ export const Contact = () => {
                 />
               </svg>
             </div>
-            <span className="transition-colors duration-100 group-hover:text-gray-800">
+            <span className="text-gray-700 font-medium transition-colors duration-300 group-hover:text-amber-700">
               ejemplo.correo@gmail.com
             </span>
           </div>
 
-          <div className="group bg-[#fcfcfc] px-3 py-2.5  rounded-xl flex items-center gap-4 shadow-sm border border-gray-300 hover:border-gray-400 transition-all duration-200">
-            <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-full h-9 w-9 flex items-center justify-center border border-gray-400 transition-all duration-200 group-hover:border-gray-600 group-hover:scale-110 group-hover:from-gray-200 group-hover:to-gray-200">
+          {/* Phone Card */}
+          <div className="group bg-white px-5 py-4 rounded-xl flex items-center gap-4 shadow-md hover:shadow-lg transition-all duration-300 border-b-3 border-amber-300 hover:border-amber-400">
+            <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-full h-10 w-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
               <svg
-                className="text-gray-600 group-hover:text-gray-700"
+                className="text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.5em"
                 height="1.5em"
@@ -72,12 +93,16 @@ export const Contact = () => {
                 />
               </svg>
             </div>
-            <span className="tracking-tighter"> +54 9 264 525-2157 </span>
+            <span className="text-gray-700 font-medium tracking-tighter">
+              +54 9 264 525-2157
+            </span>
           </div>
-          <div className="group bg-[#fcfcfc] px-3 py-2.5  rounded-xl flex items-center gap-4 shadow-sm border border-gray-300 hover:border-gray-400 transition-all duration-200">
-            <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-full h-9 w-9 flex items-center justify-center border border-gray-400 transition-all duration-200 group-hover:border-gray-600 group-hover:scale-110 group-hover:from-gray-200 group-hover:to-gray-200">
+
+          {/* Address Card */}
+          <div className="group bg-white px-5 py-4 rounded-xl flex items-center gap-4 shadow-md hover:shadow-lg transition-all duration-300 border-b-3 border-amber-300 hover:border-amber-400">
+            <div className="bg-gradient-to-br from-amber-400 to-amber-500 rounded-full h-10 w-10 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
               <svg
-                className="text-gray-600 group-hover:text-gray-700"
+                className="text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.5em"
                 height="1.5em"
@@ -95,17 +120,20 @@ export const Contact = () => {
                 </g>
               </svg>
             </div>
-            <span> Saturnino Sarassa 464. Trinidad, San Juan</span>
+            <span className="text-gray-700 font-medium">
+              Saturnino Sarassa 464. Trinidad, San Juan
+            </span>
           </div>
 
-          <div className="flex gap-6 mt-6 text-blue-950 ">
+          {/* Social Media - Enhanced */}
+          <div className="flex gap-6 mt-8 justify-center md:justify-start">
             <a
               href="https://google.com"
-              className="group h-10 w-10 transition-all duration-300 transform hover:scale-110  hover:text-gray-800 cursor-pointer hover:animate-pulse"
+              className="group h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-amber-500 hover:scale-110 hover:shadow-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
+                className="w-6 h-6 text-amber-700 group-hover:text-white"
                 viewBox="0 0 512 512"
               >
                 <path
@@ -116,10 +144,10 @@ export const Contact = () => {
             </a>
             <a
               href="https://google.com"
-              className="group h-10 w-10 transition-all duration-300 transform hover:scale-110  hover:text-gray-800 cursor-pointer hover:animate-pulse"
+              className="group h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-amber-500 hover:scale-110 hover:shadow-md"
             >
               <svg
-                className="w-full h-full"
+                className="w-6 h-6 text-amber-700 group-hover:text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 14 14"
               >
@@ -131,11 +159,11 @@ export const Contact = () => {
             </a>
             <a
               href="https://google.com"
-              className="group h-10 w-10 transition-all duration-300 transform hover:scale-110  hover:text-gray-800 cursor-pointer hover:animate-pulse"
+              className="group h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-amber-500 hover:scale-110 hover:shadow-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
+                className="w-6 h-6 text-amber-700 group-hover:text-white"
                 viewBox="0 0 20 20"
               >
                 <path
