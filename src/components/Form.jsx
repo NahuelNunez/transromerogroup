@@ -63,7 +63,7 @@ export const Form = () => {
   };
 
   return (
-    <div className="font-orbitron">
+    <div className="font-work-sans">
       <ToastContainer />
       <div className="flex justify-center items-center gap-20">
         <button
@@ -84,7 +84,7 @@ export const Form = () => {
               onSubmit={handleSubmit}
               className="h-[70%] w-full p-4 md:p-0 md:w-[50%] bg-black/90 md:h-[50%] text-white flex flex-col rounded-4xl justify-around items-center"
             >
-              <h2 className="font-orbitron">Agregar Promocion</h2>
+              <h2 className="font-work-sans">Agregar Promocion</h2>
               <select
                 name="tipo"
                 onChange={handleChange}

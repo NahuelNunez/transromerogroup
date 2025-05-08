@@ -68,7 +68,7 @@ export const ExpresoCuyano = () => {
 
         <div className="flex  justify-center gap-20 flex-wrap relative items-center">
           <div className="group transition-all duration-300 card">
-            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly  md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#f4f9ff] ">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly  md:h-[250px] p-6 text-left group group-hover:border-gray-400 group-hover:scale-110 duration-400 ease-in-out     w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#f4f9ff] ">
               <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 {" "}
                 <svg
@@ -96,7 +96,7 @@ export const ExpresoCuyano = () => {
             </div>
           </div>
           <div className="group transition-all duration-300">
-            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#fdfdfd]">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400 group-hover:scale-110 duration-400 ease-in-out    w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#fdfdfd]">
               <div className="absolute -top-5 -right-5  border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 <svg
                   className="text-[#ffff]"
@@ -127,7 +127,7 @@ export const ExpresoCuyano = () => {
             </div>
           </div>
           <div className="group transition-all duration-300">
-            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400 box-shadow   w-auto max-w-[400px] h-[210px]  rounded-lg  hover:cursor pointer divs   transition-all  border border-gray-500 bg-[#fdfdfd]">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400 box-shadow group-hover:scale-110 duration-400 ease-in-out    w-auto max-w-[400px] h-[210px]  rounded-lg  hover:cursor pointer divs   transition-all  border border-gray-500 bg-[#fdfdfd]">
               <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 <svg
                   className="text-[#ffff]"
@@ -158,7 +158,7 @@ export const ExpresoCuyano = () => {
         </div>
 
         <div className="mx-auto">
-          <h2 className="font-orbitron text-2xl text-center font-semibold text-[#003399] ">
+          <h2 className="font-orbitron text-2xl text-center font-semibold text-[#003399] animate-pulse ">
             Promociones de viajes
             {/* <hr className="w-64 mx-auto mt-2 text-[#660000]" /> */}
           </h2>
