@@ -26,12 +26,12 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <div className="bg-[#000] w-full fixed top-0  mr-auto ml-auto  z-[9999] p-7 pl-[20px] pr-[20px]">
-      <div className="flex justify-between lg:justify-around  w-full items-center text-white  ">
+    <div className="bg-[#000000a8] backdrop-blur-md w-full fixed top-0  mr-auto ml-auto  z-[9999] p-7 pl-[20px] pr-[20px] ">
+      <div className="flex justify-between lg:justify-around  w-full items-center text-white">
         <div className="">
           <a
             href="#inicio"
-            className="absolute  top-4 left-4  md:left-4 xl:left-40 lg:left-10"
+            className="absolute top-4 left-4  md:left-4 xl:left-40 lg:left-10"
           >
             <img
               src="/images/TRANSROMERO CUT.png"
@@ -39,6 +39,29 @@ export const Navbar = () => {
             />
           </a>
         </div>
+        <div className="">
+          <a
+            href="#inicio"
+            className="absolute max-w-18 top-8 right-12  md:left-4 xl:left-70 lg:left-10"
+          >
+            <img
+              src="/images/CUYANO SVG_Definitivo.png"
+              className="w-18 bg-white/85 rounded-2xl py-2 px-3  object-covers object-center object-contain "
+            />
+          </a>
+        </div>
+        <div className="">
+          <a
+            href="#inicio"
+            className="absolute top-11 right-12  md:left-4 xl:left-90 lg:left-20"
+          >
+            <img
+              src="/images/MEGAPACK SVG_DEFINITIVO.png"
+              className="w-24 object-covers object-center object-contain"
+            />
+          </a>
+        </div>
+
         <button
           className={`lg:hidden flex flex-col items-center gap-1.5 p-2`}
           onClick={toggleMenu}
@@ -71,35 +94,35 @@ export const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, y: 93 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute lg:hidden bg-[#000]/90 h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
+            className="absolute lg:hidden bg-[#000000ce] backdrop-blur-md h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
           >
-            <ul className="flex flex-col justify-around  items-center gap-20 my-4   md:gap-30 font-orbitron ">
+            <ul className="flex flex-col justify-around  items-center gap-20 my-4   md:gap-30 font-work-sans ">
               <li
                 onClick={() => setIsMenuOpen(false)}
-                className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                className="text-md text-white  transition-all ease-in-out duration-100 cursor-pointer"
               >
                 <a href="#inicio">Inicio</a>
               </li>
               <li
                 onClick={() => setIsMenuOpen(false)}
-                className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                className="text-md text-white  transition-all ease-in-out duration-100 cursor-pointer"
               >
                 <a href="#servicios">Servicios</a>
               </li>
               <li
                 onClick={() => setIsMenuOpen(false)}
-                className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                className="text-md text-white transition-all ease-in-out duration-100 cursor-pointer"
               >
                 <a href="#testimonios">Testimonios</a>
               </li>
               <li
                 onClick={() => setIsMenuOpen(false)}
-                className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                className="text-md text-white  transition-all ease-in-out duration-100 cursor-pointer"
               >
                 <a href="#contactanos">Contactanos</a>
               </li>
               <li
-                className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                className="text-md text-white  transition-all ease-in-out duration-100 cursor-pointer"
                 ref={dropdownRef}
               >
                 <button
@@ -150,13 +173,13 @@ export const Navbar = () => {
                     <ul className="py-2 flex flex-col justify-between gap-1">
                       <li
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                        className="text-md text-white transition-all ease-in-out duration-100 cursor-pointer"
                       >
                         <a href="#expresocuyano">ExpresoCuyano</a>
                       </li>
                       <li
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer"
+                        className="text-md text-white 600 transition-all ease-in-out duration-100 cursor-pointer"
                       >
                         <a href="#megapack">MegaPack</a>
                       </li>
@@ -169,35 +192,35 @@ export const Navbar = () => {
           </motion.div>
         )}
 
-        <div className=" hidden lg:flex justify-between lg:gap-10 list-none items-center font-orbitron">
+        <div className=" hidden lg:flex justify-between lg:gap-6 list-none back items-center font-work-sans text-lg">
           <a
-            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            className="cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500"
             href="#inicio"
           >
             Inicio
           </a>
 
           <a
-            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            className="cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500"
             href="#servicios"
           >
             Servicios
           </a>
           <a
-            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            className="cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500"
             href="#testimonios"
           >
             Testimonios
           </a>
           <a
-            className="hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+            className="cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500"
             href="#contactanos"
           >
             Contactanos
           </a>
           <div className="relative inline-block text-left" ref={dropdownRef}>
             <button
-              className="flex items-center gap-2 hover hover:text-blue-600  cursor-pointer hover:transition-all hover:ease-in-out hover:duration-[0.2s] "
+              className="flex items-center gap-2 hover cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500"
               onClick={() => setOpen(!Open)}
             >
               Más Opciones{" "}
@@ -238,14 +261,14 @@ export const Navbar = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="absolute mt-2 w-40 bg-[#000]/90 p-2 rounded-lg shadow-lg"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute mt-[30px] w-40 bg-[#0000009f] backdrop-blur-md  pl-3 p-2 rounded-lg shadow-lg -ml-3"
               >
                 <ul className="py-2 flex flex-col justify-between gap-4">
-                  <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
+                  <li className="text-md text-white cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500">
                     <a href="#expresocuyano">ExpresoCuyano</a>
                   </li>
-                  <li className="text-md text-white hover:text-blue-600 transition-all ease-in-out duration-100 cursor-pointer">
+                  <li className="text-md text-white cursor-pointer hover:border-b-1 hover:tracking-wider transition-all duration-500">
                     <a href="#megapack">MegaPack</a>
                   </li>
                 </ul>
