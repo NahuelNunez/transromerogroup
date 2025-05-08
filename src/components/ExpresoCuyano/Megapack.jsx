@@ -6,6 +6,20 @@ import { toast } from "react-toastify";
 export const Megapack = () => {
   const { user } = useAuth();
   const { getPromocion, deletePromocion, promociones } = useMegaPack();
+  const handleScroll = () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        el.classList.add("scroll-animate");
+      }
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     getPromocion();
   }, [user]);
@@ -38,13 +52,13 @@ export const Megapack = () => {
   }
 
   return (
-    <section id="megapack">
+    <section id="megapack" className="">
       <div className="mx-auto">
-        <hr className="max-w-[90rem]  min-w-[15rem] mx-auto mt-0.5 text-[#0024663b]" />
+        <hr className="max-w-[90rem]  min-w-[15rem] mx-auto mt-1.5 text-gray-400 " />
         <h2 className="font-orbitron text-2xl text-center font-semibold text-blue-950 mt-10 mb-[5rem]">
           <img
             src="/images/MEGAPACK SVG_DEFINITIVO.png"
-            className="mx-auto w-100 h-50 object-contain object-center"
+            className="mx-auto w-100 h-50 object-contain object-center animate-on-scroll"
           />
         </h2>
       </div>

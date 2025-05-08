@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { useExpresoCuyano } from "./Store/useExpresoCuyano";
 import { useAuth } from "../../../Auth/store/useAuth";
@@ -9,11 +9,21 @@ import { Form } from "../Form";
 export const ExpresoCuyano = () => {
   const { user } = useAuth();
   const { getPromocion, deletePromocion, promociones } = useExpresoCuyano();
-  // const [data, setData] = useState([]);
-  // const FetchGetPromocion = async () => {
-  //   const response = await getPromocion();
-  //   setData(response.data);
-  // };
+
+  const handleScroll = () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        el.classList.add("scroll-animate");
+      }
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     getPromocion();
   }, [user]);
@@ -45,9 +55,9 @@ export const ExpresoCuyano = () => {
   }
 
   return (
-    <section id="expresocuyano" className="mb-[4rem]">
+    <section id="expresocuyano" className="mb-[4rem] gradiantee">
       <div className="flex flex-col gap-20 p-4">
-        <div>
+        <div className="">
           <h2 className="font-orbitron text-4xl text-center font-semibold text-blue-950">
             <img
               src="/images/CUYANO SVG_Definitivo.png"
@@ -57,16 +67,16 @@ export const ExpresoCuyano = () => {
         </div>
 
         <div className="flex  justify-center gap-20 flex-wrap relative items-center">
-          <div className="group transition-all duration-300">
-            <div className="relative flex flex-col gap-2 justify-evenly  md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] shadow-md rounded-lg  hover:cursor pointer   transition-all  border border-gray-300">
-              <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-400 group-hover:border-gray-500 p-2 z-10 bg-[#fdfdfd] scale-85 group-hover:scale-110 transition-all duration-300 ">
+          <div className="group transition-all duration-300 card">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly  md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#f4f9ff] ">
+              <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
                   height="1.8em"
                   viewBox="0 0 472 384"
-                  className="text-[#660000]"
+                  className="text-[#ffff]"
                 >
                   <path
                     fill="currentColor"
@@ -74,11 +84,11 @@ export const ExpresoCuyano = () => {
                   />
                 </svg>
               </div>
-              <h2 className="font-orbitron text-xl text-blue-950 font-semibold ">
+              <h2 className="font-orbitron text-xl text-[#046cdc] font-semibold ">
                 Conexión y confianza
               </h2>
 
-              <p className="font-poppins text-gray-600 text-sm tracking-wide">
+              <p className="font-poppins text-[#161616] text-sm tracking-wide">
                 Conectamos destinos y unimos historias. Viaja con comodidad y
                 seguridad a Chile, Buenos Aires, Bolivia y más, con las mejores
                 promociones y un servicio de calidad.
@@ -86,10 +96,10 @@ export const ExpresoCuyano = () => {
             </div>
           </div>
           <div className="group transition-all duration-300">
-            <div className=" relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] shadow-md rounded-lg  hover:cursor pointer   transition-all  border border-gray-300">
-              <div className="absolute -top-5 -right-5  border-2 rounded-full border-gray-400 group-hover:border-gray-500 p-2 z-10 bg-[#fdfdfd] scale-85 group-hover:scale-110 transition-all duration-300 ">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] box-shadow  rounded-lg  hover:cursor pointer   transition-all  border border-gray-500 bg-[#fdfdfd]">
+              <div className="absolute -top-5 -right-5  border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 <svg
-                  className="text-[#660000]"
+                  className="text-[#ffff]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"
                   height="2em"
@@ -105,11 +115,11 @@ export const ExpresoCuyano = () => {
                   />
                 </svg>
               </div>
-              <h2 className="font-orbitron text-xl font-semibold text-blue-950">
+              <h2 className="font-orbitron text-xl font-semibold text-[#046cdc]">
                 Compromiso con la excelencia
               </h2>
 
-              <p className=" font-poppins text-sm text-gray-600 tracking-wide ">
+              <p className=" font-poppins text-sm text-[#161616]  tracking-wide ">
                 Ofrecemos viajes confiables con vehículos modernos, atención
                 personalizada y total compromiso con la puntualidad y el
                 confort.
@@ -117,10 +127,10 @@ export const ExpresoCuyano = () => {
             </div>
           </div>
           <div className="group transition-all duration-300">
-            <div className=" relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400    w-auto max-w-[400px] h-[210px] shadow-md rounded-lg  hover:cursor pointer   transition-all  border border-gray-300">
-              <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-400 group-hover:border-gray-500 p-2 z-10 bg-[#fdfdfd] scale-85 group-hover:scale-110 transition-all duration-300 ">
+            <div className="animate-on-scroll relative flex flex-col gap-2 justify-evenly   md:h-[250px] p-6 text-left group group-hover:border-gray-400 box-shadow   w-auto max-w-[400px] h-[210px]  rounded-lg  hover:cursor pointer divs   transition-all  border border-gray-500 bg-[#fdfdfd]">
+              <div className="absolute -top-5 -right-5 border-2 rounded-full border-gray-500 group-hover:border-gray-400 p-2 z-10 bg-[#007bff] scale-85 group-hover:scale-110 transition-all duration-300 ">
                 <svg
-                  className="text-[#660000]"
+                  className="text-[#ffff]"
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"
                   height="2em"
@@ -134,11 +144,11 @@ export const ExpresoCuyano = () => {
                   />
                 </svg>
               </div>
-              <h2 className="font-orbitron text-xl font-semibold text-blue-950">
+              <h2 className="font-orbitron text-xl font-semibold text-[#046cdc] ">
                 Llamado a la acción
               </h2>
 
-              <p className=" font-poppins text-sm text-gray-600 tracking-wide">
+              <p className=" font-poppins text-sm text-[#161616] tracking-wide">
                 Ya sea por trabajo, aventura o placer, te llevamos a donde
                 necesites. Reserva tu asiento hoy y descubre una nueva forma de
                 viajar.
@@ -148,7 +158,7 @@ export const ExpresoCuyano = () => {
         </div>
 
         <div className="mx-auto">
-          <h2 className="font-orbitron text-2xl text-center font-semibold text-blue-950 ">
+          <h2 className="font-orbitron text-2xl text-center font-semibold text-[#003399] ">
             Promociones de viajes
             {/* <hr className="w-64 mx-auto mt-2 text-[#660000]" /> */}
           </h2>

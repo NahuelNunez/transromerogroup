@@ -76,7 +76,7 @@ export const Login = () => {
         </svg>
       </button>
       {loginmenu ? (
-        <div className="absolute backdrop-blur-lg inset-0 min-h-screen  ">
+        <div className="absolute backdrop-blur-lg inset-0 min-h-screen transition-opacity duration-300 opacity-100 ease-in-out  ">
           <div className="relative w-[85%] h-[50%] md:w-[40%] md:h-[40%] bg-black/70 rounded-4xl   mx-auto flex flex-col justify-center items-center -bottom-50">
             <button
               onClick={() => {
@@ -151,7 +151,7 @@ export const Login = () => {
 
               <button
                 type="submit"
-                className="bg-red-400 relative p-4 mt-2 cursor-pointer rounded-2xl hover:bg-red-500"
+                className="bg-red-400 relative p-4 mt-2 cursor-pointer rounded-2xl hover:bg-red-500  transition-all ease-in-out duration-200"
               >
                 Iniciar Sesion
                 {/* <svg

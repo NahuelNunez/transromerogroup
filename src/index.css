@@ -3,8 +3,26 @@
 @theme {
     --font-orbitron: "orbitron", sans-serif; 
    --font-poppins: "poppins" , sans-serif;
-  }
 
+
+  }
+  @keyframes slideRightToLeft {
+    from {
+     transform: translateY(10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .scroll-animate {
+    animation: slideRightToLeft 0.9s ease-in-out forwards;
+  }
+.animated{
+
+}
   html {
     scroll-behavior: smooth;
   }
@@ -20,3 +38,13 @@ section {
   scroll-margin-top: 80px;
 }
 
+.gradiantee{
+  
+  background: linear-gradient(135deg, #ffffff 0%, #007bff 100%);
+
+
+}
+
+.box-shadow:hover{
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.70);
+}
