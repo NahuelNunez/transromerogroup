@@ -28,38 +28,40 @@ export const Navbar = () => {
   return (
     <div className="bg-[#000000a8] backdrop-blur-md w-full fixed top-0  mr-auto ml-auto  z-[9999] p-7 pl-[20px] pr-[20px] ">
       <div className="flex justify-between lg:justify-around  w-full items-center text-white">
-        <div className="">
-          <a
-            href="#inicio"
-            className="absolute top-4 left-4  md:left-4 xl:left-40 lg:left-10"
-          >
-            <img
-              src="/images/TRANSROMERO CUT.png"
-              className="w-24 object-covers object-center object-contain "
-            />
-          </a>
-        </div>
-        <div className="">
-          <a
-            href="#inicio"
-            className="absolute max-w-18 top-8 right-12  md:left-4 xl:left-70 lg:left-10"
-          >
-            <img
-              src="/images/CUYANO SVG_Definitivo.png"
-              className="w-18 bg-white/85 rounded-2xl py-2 px-3  object-covers object-center object-contain "
-            />
-          </a>
-        </div>
-        <div className="">
-          <a
-            href="#inicio"
-            className="absolute top-11 right-12  md:left-4 xl:left-90 lg:left-20"
-          >
-            <img
-              src="/images/MEGAPACK SVG_DEFINITIVO.png"
-              className="w-24 object-covers object-center object-contain"
-            />
-          </a>
+        <div className="flex items-center gap-2">
+          <div className="">
+            <a
+              href="#inicio"
+              className=" top-4 left-4  md:left-4 xl:left-40 lg:left-10"
+            >
+              <img
+                src="/images/TRANSROMERO CUT.png"
+                className="w-24 object-covers object-center object-contain "
+              />
+            </a>
+          </div>
+          <div className="">
+            <a
+              href="#inicio"
+              className=" max-w-18 top-8 right-12  md:left-4 xl:left-70 lg:left-10"
+            >
+              <img
+                src="/images/CUYANO SVG_Definitivo.png"
+                className="w-18 bg-white/85 rounded-2xl py-2 px-3  object-covers object-center object-contain "
+              />
+            </a>
+          </div>
+          <div className="">
+            <a
+              href="#inicio"
+              className=" top-11 right-12  md:left-4 xl:left-90 lg:left-20"
+            >
+              <img
+                src="/images/MEGAPACK SVG_DEFINITIVO.png"
+                className="w-24 object-covers object-center object-contain"
+              />
+            </a>
+          </div>
         </div>
 
         <button

@@ -164,7 +164,7 @@ export const ExpresoCuyano = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-2">
           {promociones.length === 0 ? (
             <p className="text-center text-gray-600 font-poppins">
               No hay promociones disponibles.
@@ -172,7 +172,7 @@ export const ExpresoCuyano = () => {
           ) : (
             promociones.map((promos) => (
               <div
-                className="flex flex-col items-center justify-center min-w-[350px] h-[350px] md:w-[750px] md:h-[200px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center min-w-[350px] h-[350px] md:w-[750px] md:h-[200px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
                 key={promos.id}
               >
                 <img
@@ -182,19 +182,19 @@ export const ExpresoCuyano = () => {
                   className="rounded-lg bg-cover bg-center w-[200px]"
                 />
                 <div className="flex flex-col justify-around gap-3 mt-1 md:w-[400px]">
-                  <h2 className="text-blue-700 font-bold font-poppins">
+                  <h2 className="text-[#046cdc] font-bold font-poppins">
                     {promos.titulo}
                   </h2>
-                  <p className="text-gray-600 font-poppins">
+                  <p className="text-gray-700 font-poppins">
                     {promos.descripcion}
                   </p>
                   <h3 className="text-green-500 font-semibold">
                     $ ARS {promos.precio}
                   </h3>
-                  <div className="mx-auto bg-[#2A4865] p-3 rounded-full scale-90 transition-all hover:scale-100 cursor-pointer duration-300">
+                  <div className="mx-auto bg-[#2A4865] hover:bg-[#046cdc] p-3 rounded-full  transition-all cursor-pointer duration-300">
                     <a
                       onClick={() => HandleWspClick(promos)}
-                      className="text-white font-semibold"
+                      className="text-white font-semibold "
                     >
                       Reservar Ahora
                     </a>

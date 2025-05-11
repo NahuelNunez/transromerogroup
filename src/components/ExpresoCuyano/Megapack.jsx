@@ -70,7 +70,7 @@ export const Megapack = () => {
         ) : (
           promociones.map((promos) => (
             <div
-              className="flex flex-col items-center justify-center min-w-[350px] h-[350px] md:w-[750px] md:h-[200px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+              className="flex flex-col items-center mb-10 hover:scale-110 box-shadow justify-center min-w-[350px] h-[350px] md:w-[750px] md:h-[200px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
               key={promos.id}
             >
               <img
@@ -89,7 +89,7 @@ export const Megapack = () => {
                 <h3 className="text-green-500 font-semibold">
                   $ ARS {promos.precio}
                 </h3>
-                <div className="mx-auto bg-[#2A4865] p-3 rounded-full scale-90 transition-all hover:scale-100 cursor-pointer duration-300">
+                <div className="mx-auto bg-[#2A4865] p-3   hover:bg-[#046cdc] rounded-full  transition-all  cursor-pointer duration-300">
                   <a
                     onClick={() => HandleWspClick(promos)}
                     className="text-white font-semibold"

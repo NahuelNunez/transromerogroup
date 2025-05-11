@@ -76,8 +76,8 @@ export const Login = () => {
         </svg>
       </button>
       {loginmenu ? (
-        <div className="absolute backdrop-blur-lg inset-0 min-h-screen transition-opacity duration-300 opacity-100 ease-in-out  ">
-          <div className="relative w-[85%] h-[50%] md:w-[40%] md:h-[40%] bg-black/70 rounded-4xl   mx-auto flex flex-col justify-center items-center -bottom-50">
+        <div className="absolute  inset-0 min-h-screen   bg-black/90 ">
+          <div className="relative w-[85%] h-[50%] md:w-[40%] md:h-[40%] bg-black/90 rounded-4xl   mx-auto flex flex-col justify-center items-center -bottom-50">
             <button
               onClick={() => {
                 setLoginmenu(false);
@@ -141,7 +141,7 @@ export const Login = () => {
                 >
                   {show ? <EyeOff size={25} /> : <Eye size={25} />}
                 </button>
-                <p className="text-sm text-red-500 font-poppins absolute top-41 ">
+                <p className="text-sm text-red-500 font-poppins absolute top-44">
                   {errors.password && "La contraseña es requerida"}
                 </p>
               </div>

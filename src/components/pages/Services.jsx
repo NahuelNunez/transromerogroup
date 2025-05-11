@@ -89,9 +89,10 @@ export const Services = () => {
                     Blancas
                   </li>
                 </ul>
-              ) : servicio.title === "Línea" ? (
+              ) : servicio.title === "Proximamente Línea" ? (
                 <ul className="text-sm text-gray-600 space-y-1 text-left">
                   <li>Mendoza - Aguas Blancas.</li>
+                  <li>San Juan - Mendoza.</li>
                   <li>
                     <strong className="text-amber-700">Intermedias: </strong>{" "}
                     Mendoza, San Juan, La Rioja, Catamarca, Tucumán, Salta,

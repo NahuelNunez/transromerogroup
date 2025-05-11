@@ -13,7 +13,7 @@ export const servicios = [
         />
       </svg>
     ),
-    title: "Línea",
+    title: "Proximamente Línea",
   },
   {
     icon: (
