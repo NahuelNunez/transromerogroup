@@ -172,20 +172,18 @@ export const ExpresoCuyano = () => {
           ) : (
             promociones.map((promos) => (
               <div
-                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center min-w-[350px] h-[350px] md:w-[750px] md:h-[200px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center min-w-[350px] h-[400px] md:w-[750px] md:h-[250px] lg:h-[250px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
                 key={promos.id}
               >
                 <img
                   src="/images/cardexpress.png"
-                  width={250}
-                  height={50}
-                  className="rounded-lg bg-cover bg-center w-[200px]"
+                  className="rounded-lg h-35  object-center w-[200px]"
                 />
-                <div className="flex flex-col justify-around gap-3 mt-1 md:w-[400px]">
-                  <h2 className="text-[#046cdc] font-bold font-poppins">
+                <div className="flex flex-col justify-evenly mt-1 gap-3 md:w-[400px] ">
+                  <h2 className="text-[#046cdc] font-bold font-poppins text-md md:text-lg">
                     {promos.titulo}
                   </h2>
-                  <p className="text-gray-700 font-poppins">
+                  <p className="text-gray-700 font-poppins text-sm md:text-md ">
                     {promos.descripcion}
                   </p>
                   <h3 className="text-green-500 font-semibold">

@@ -96,7 +96,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, y: 93 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute lg:hidden bg-[#000000ce] backdrop-blur-md h-screen w-full   -top-[19px] -right-0 rounded-lg  p-2"
+            className="absolute lg:hidden bg-[#000000ce] backdrop-blur-md h-dvh w-full   -top-[94px] -right-0 rounded-lg  p-2"
           >
             <ul className="flex flex-col justify-around  items-center gap-20 my-4   md:gap-30 font-work-sans ">
               <li
