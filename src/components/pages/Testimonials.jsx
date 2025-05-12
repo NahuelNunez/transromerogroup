@@ -10,12 +10,6 @@ import "swiper/css/pagination";
 
 export const Testimonials = () => {
   // Función para calcular el tamaño del texto según la longitud de la cita
-  const getFontSize = (quote) => {
-    if (quote.length < 100) return "text-2xl"; // Cortas
-    if (quote.length < 200) return "text-xl"; // Medianas
-    if (quote.length < 300) return "text-lg"; // Largas
-    return "text-base"; // Muy largas
-  };
 
   return (
     <section
@@ -79,19 +73,11 @@ export const Testimonials = () => {
 
                   {/* Texto tipo máquina de escribir con tamaño dinámico */}
                   <blockquote
-                    className={`italic text-gray-700 mb-8 max-w-2xl min-h-[150px] transition-all duration-300 ${getFontSize(
-                      testimonial.quote
-                    )}`}
+                    className={`italic text-gray-700 mb-8 max-w-2xl min-h-[150px] transition-all duration-300 
+                     
+                    `}
                   >
-                    <Typewriter
-                      words={[testimonial.quote]}
-                      loop={false}
-                      cursor
-                      cursorStyle="|"
-                      typeSpeed={30}
-                      deleteSpeed={0}
-                      delaySpeed={1000}
-                    />
+                    {testimonial.quote}
                   </blockquote>
 
                   <div className="flex flex-col items-center">
