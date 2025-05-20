@@ -172,14 +172,14 @@ export const ExpresoCuyano = () => {
           ) : (
             promociones.map((promos) => (
               <div
-                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center min-w-[350px] h-[400px] md:w-[750px] md:h-[250px] lg:h-[250px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center  h-auto min-w-[350px] h-[400px] md:w-[800px] lg:w-[840px] sm:h-auto md:h-[310px] lg:h-[310px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
                 key={promos.id}
               >
                 <img
                   src="/images/cardexpress.png"
-                  className="rounded-lg h-35  object-center w-[200px]"
+                  className="rounded-lg h-25 w-[150px] md:h-35  object-center md:w-[200px]"
                 />
-                <div className="flex flex-col justify-evenly mt-1 gap-3 md:w-[400px] ">
+                <div className="flex flex-col justify-evenly mt-1 gap-3 md:w-full ml-3 ">
                   <h2 className="text-[#046cdc] font-bold font-poppins text-md md:text-lg">
                     {promos.titulo}
                   </h2>
