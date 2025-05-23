@@ -15,9 +15,11 @@ export const Form = () => {
     precio: "",
     valida_hasta: "",
     tipo: "",
+    image: null,
   });
 
   const [openform, setOpenform] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
   const { postPromocion, getPromocion } = useExpresoCuyano();
   const {
     postPromocion: postPromocionMegaPack,
@@ -28,6 +30,15 @@ export const Form = () => {
     e.preventDefault();
     if (!validate()) return;
     const fecha = "2027-12-31T00:00:00.000Z";
+    const formData = new FormData();
+    formData.append("titulo", input.titulo);
+    formData.append("descripcion", input.descripcion);
+    formData.append("precio", input.precio);
+    formData.append("valida_hasta", fecha);
+
+    if (imageFile) {
+      formData.append("image", imageFile);
+    }
 
     const datos = {
       ...input,
@@ -37,9 +48,9 @@ export const Form = () => {
     try {
       let response;
       if (input.tipo === "expresocuyano") {
-        response = await postPromocion(datos, user.token);
+        response = await postPromocion(formData, user.token);
       } else if (input.tipo === "megapack") {
-        response = await postPromocionMegaPack(datos, user.token);
+        response = await postPromocionMegaPack(formData, user.token);
       } else {
         toast.error("Tipo de promoción inválido");
         return;
@@ -49,6 +60,7 @@ export const Form = () => {
         toast.success("Promocion creada exitosamente");
 
         reset();
+        setImageFile(null);
         setOpenform(false);
         if (input.tipo === "expresocuyano") {
           await getPromocion();
@@ -100,6 +112,29 @@ export const Form = () => {
                   {error.tipo}
                 </p>
               )}
+              <div className="w-[50%] flex items-center gap-4">
+                <label
+                  htmlFor="file-upload"
+                  className="block p-2 text-gray-400 border-b border-gray-500 hover:border-white transition-colors cursor-pointer flex-1"
+                >
+                  {imageFile ? imageFile.name : "Selecciona una imagen"}
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={(e) => setImageFile(e.target.files[0])}
+                  className="hidden"
+                />
+                {imageFile && (
+                  <img
+                    src={URL.createObjectURL(imageFile)}
+                    alt="Previsualización"
+                    className="w-16 h-16 object-cover rounded-md border border-gray-500"
+                  />
+                )}
+              </div>
 
               <input
                 onChange={handleChange}
@@ -125,6 +160,7 @@ export const Form = () => {
                   {error.descripcion}
                 </p>
               )}
+
               <input
                 onChange={handleChange}
                 type="number"
@@ -145,7 +181,10 @@ export const Form = () => {
                   Agregar
                 </button>
                 <button
-                  onClick={() => setOpenform(false)}
+                  onClick={() => {
+                    setOpenform(false);
+                    setImageFile(null);
+                  }}
                   className="bg-red-500 p-3 font-poppins px-7 rounded-full hover:scale-110 cursor-pointer transition-all ease-in duration-[0.2s]"
                 >
                   Cancelar

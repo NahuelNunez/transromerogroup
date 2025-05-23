@@ -62,7 +62,7 @@ export const Megapack = () => {
           />
         </h2>
       </div>
-      <div className="flex flex-col justify-center items-center gap-4">
+      <div className="flex flex-col justify-center items-center gap-4 mx-2">
         {promociones.length === 0 ? (
           <p className="text-center text-gray-600 font-poppins">
             No hay promociones disponibles.
@@ -70,11 +70,12 @@ export const Megapack = () => {
         ) : (
           promociones.map((promos) => (
             <div
-              className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center  h-auto min-w-[350px] h-[400px] md:w-[800px] lg:w-[840px] sm:h-auto md:h-[310px] lg:h-[310px] p-4 border border-gray-600 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+              className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center  h-auto min-w-[350px] md:w-auto lg:w-[900px] sm:h-auto md:h-[325px] lg:h-[340px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
               key={promos.id}
             >
               <img
-                src="/images/cardexpress.png"
+                src={promos.imagenUrl || "/images/cardexpress.png"}
+                alt={promos.titulo}
                 className="rounded-lg h-25 w-[150px] md:h-35  object-center md:w-[200px]"
               />
               <div className="flex flex-col justify-around gap-3 mt-1 md:w-full ml-3">
