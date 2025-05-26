@@ -149,8 +149,9 @@ export const Form = () => {
                 </p>
               )}
 
-              <input
+              <textarea
                 onChange={handleChange}
+                rows={3}
                 name="descripcion"
                 className="w-[50%] p-2 outline-none border-b-1 border-b-gray-500 focus:border-b-white"
                 placeholder="Coloque descripcion"

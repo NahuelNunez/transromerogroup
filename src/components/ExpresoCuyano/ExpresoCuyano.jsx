@@ -172,7 +172,7 @@ export const ExpresoCuyano = () => {
           ) : (
             promociones.map((promos) => (
               <div
-                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center  h-auto min-w-[350px] md:w-auto lg:w-[900px] sm:h-auto md:h-[325px] lg:h-[340px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
+                className="bg-white/80 backdrop-blur-md mb-5 box-shadow  hover:scale-110  flex flex-col items-center justify-center  h-auto min-w-[350px] md:w-auto lg:w-[900px] sm:h-auto md:h-[350px] lg:h-[400px] p-4 border border-gray-400 rounded-2xl transition-all duration-300 hover:border-gray-600 md:flex-row md:items-center md:justify-between"
                 key={promos.id}
               >
                 <img
@@ -184,7 +184,7 @@ export const ExpresoCuyano = () => {
                   <h2 className="text-[#046cdc] font-bold font-poppins text-md md:text-lg">
                     {promos.titulo}
                   </h2>
-                  <p className="text-gray-700 font-poppins text-sm md:text-md ">
+                  <p className="text-gray-700 font-poppins text-sm md:text-md whitespace-pre-line ">
                     {promos.descripcion}
                   </p>
                   <h3 className="text-green-500 font-semibold">
